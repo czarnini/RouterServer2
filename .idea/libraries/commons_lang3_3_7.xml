@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="commons-lang3-3.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/commons-lang3-3.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/json-20171018.jar!/" />
+      <root url="jar://$PROJECT_DIR$/okhttp-3.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/okio-1.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sqlite-jdbc-3.21.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
