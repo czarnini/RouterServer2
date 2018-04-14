@@ -58,11 +58,11 @@ public class Route {
         Random generator = new Random();
         Route route = new Route(size, helper);
         for (int i = 0; i < size; i++) {
-            int insertIndex;
+/*            int insertIndex;
             do {
                 insertIndex = generator.nextInt(size);
-            } while (route.getCity(insertIndex) != -1);
-            route.setCity(i, insertIndex);
+            } while (route.getCity(insertIndex) != -1);*/
+            route.setCity(i, i ); //insertIndex
         }
         return route;
     }
@@ -70,12 +70,13 @@ public class Route {
     synchronized void countCost() {
         int result = 0;
         for (int i = 0; i < citiesOrder.length - 1; i++) {
-            result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 0);
+            result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 9);
         }
         cost = result;
     }
 
     public int getCost() {
+        countCost();
         return cost;
     }
 
@@ -106,23 +107,21 @@ public class Route {
 
     public boolean isFeasible() {
         int currentTime = 0;
-        for (int i = 0; i < citiesOrder.length - 1; i++) {
+/*        for (int i = 0; i < citiesOrder.length - 1; i++) {
             if (currentTime > distanceHelper.getMeetings().get(citiesOrder[i]).getLatestTimePossible()) {
                 return false;
             }
             currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], currentTime) / 3600;
-        }
+        }*/
         return true;
     }
 
     public void getRoute() {
         try {
-
-
             int currentTime = 0;
             for (int i = 0; i < citiesOrder.length - 1; i++) {
                 int index = citiesOrder[i];
-                System.out.println(distanceHelper.getMeetings().get(index).getAddress() + " ETA: " + currentTime / 3600);
+                System.out.println(distanceHelper.getMeetings().get(index).getAddress() + " ETA: " + currentTime);
                 currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], currentTime / 3600);
             }
         } catch (Exception e) {

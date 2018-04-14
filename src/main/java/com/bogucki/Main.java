@@ -4,7 +4,9 @@ import com.bogucki.databse.DistanceHelper;
 import com.bogucki.networking.EchoPostNewAddressHandler;
 import com.bogucki.networking.EchoPostOptimizeHandler;
 import com.bogucki.networking.RootHandler;
+import com.bogucki.optimize.Client;
 import com.bogucki.optimize.Handler;
+import com.bogucki.optimize.Meeting;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -15,6 +17,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -29,16 +32,15 @@ public class Main {
 
         initFireBase();
 
-        DatabaseReference requests = FirebaseDatabase.getInstance().getReference().child("requests");
-        requests.addChildEventListener(new ChildEventListener() {
+        DatabaseReference routerDataBase = FirebaseDatabase.getInstance().getReference();
+        routerDataBase.child("requests").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot snapshot, String previousChildName) {
-                System.out.println(snapshot.getKey() + " started");
                 DatabaseReference routeToOptimize = FirebaseDatabase
                         .getInstance()
                         .getReference()
                         .child("meetings")
-                        .child( snapshot.getKey());
+                        .child(snapshot.getKey());
 
                 new Thread(new Handler(routeToOptimize)).start();
             }
@@ -63,7 +65,42 @@ public class Main {
             }
         });
 
-        while (true){
+
+        routerDataBase.child("clients").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot snapshot, String previousChildName) {
+                try {
+                    Client client = snapshot.getValue(Client.class);
+                    DistanceHelper distanceHelper = new DistanceHelper(null);
+                    distanceHelper.addAddressToDb(client.getAddress());
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot snapshot, String previousChildName) {
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot snapshot) {
+                System.out.println(snapshot.getKey() + " finished");
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot snapshot, String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
+
+
+        while (true) {
 
         }
 

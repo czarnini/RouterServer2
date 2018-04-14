@@ -36,9 +36,9 @@ public class Handler implements Runnable, DataReadListener {
         }
 
 
-        for (int i = 0; i < threads.length; i++) {
+        for (Thread thread : threads) {
             try {
-                threads[i].join();
+                thread.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -57,7 +57,7 @@ public class Handler implements Runnable, DataReadListener {
     }
 
     private void getMeetings(DataReadListener listener) {
-        routeToOptimize.addListenerForSingleValueEvent(new ValueEventListener() {
+        routeToOptimize.orderByChild("meetingOrder").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot tmp : snapshot.getChildren()) {
@@ -74,6 +74,7 @@ public class Handler implements Runnable, DataReadListener {
     }
 
     private void updateRoute(){
+        System.out.println("Final list cost: " + result.getCost());
         Map<String, Object> valuesToSend = new HashMap<>();
         int [] order = result.getCitiesOrder();
         for (int i = 0; i < order.length; i++) {

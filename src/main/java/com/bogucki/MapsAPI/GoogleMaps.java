@@ -59,7 +59,7 @@ public class GoogleMaps {
     }
 
     private static HttpUrl getHttpUrl(String origin, String destination) {
-        String key = "AIzaSyBDG4CZIG5D3gpQz5WOCt5xHw60_vayWc8";
+        String key = "AIzaSyBWoOIyKRmAmxDNp0ulw07WUrbULE63u0I";  //"AIzaSyBDG4CZIG5D3gpQz5WOCt5xHw60_vayWc8";
 
         return new HttpUrl.Builder()
                 .scheme("https")

@@ -113,4 +113,8 @@ public class Meeting2 {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return address + "\t" + meetingOrder;
+    }
 }

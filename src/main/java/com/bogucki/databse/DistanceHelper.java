@@ -111,6 +111,9 @@ public class DistanceHelper {
     public int getTime(int origin, int destination, int timeOfStart) {
         int originID = addressesIds.get(origin);
         int destinationID = addressesIds.get(destination);
+        if(originID == destinationID){
+            return 0;
+        }
         return costs.get(originID).get(destinationID).get(timeOfStart);
 
     }
@@ -150,6 +153,9 @@ public class DistanceHelper {
         ArrayList<Integer> timesToNewAddress = GoogleMaps.getDistances(currentAddresses, address);
         ArrayList<Integer> timesFromNewAddress = GoogleMaps.getDistances(address, currentAddresses);
 
+        if(timesFromNewAddress.size() == 0){
+            return -1;
+        }
 
         int id;
         id = addAddressToDict(address);
@@ -229,26 +235,6 @@ public class DistanceHelper {
 
     private int mapAddressToID(String addressToCheck) throws SQLException {
         int id = getAddressID(addressToCheck);
-
-
-        /*if (id != -1) {
-            System.out.println("ID == " + id);
-        }else{
-            System.out.println(addressToCheck);
-        }
-*/
-
-        //TODO delete when Młynarska 8/12 is fixed
-        if(id == 49){
-            String currentAddresses = StringUtils.join(getAllAddresses(), "|");
-            ArrayList<Integer> timesToNewAddress = GoogleMaps.getDistances(currentAddresses, addressToCheck);
-            ArrayList<Integer> timesFromNewAddress = GoogleMaps.getDistances(addressToCheck, currentAddresses);
-            createAddressTable(id, timesFromNewAddress);
-            insertTimes(1, id, timesToNewAddress);
-            return 49;
-        }
-
-
         return -1 == id ? addAddress(addressToCheck) : id;
     }
 
@@ -277,6 +263,10 @@ public class DistanceHelper {
             mapAddressToID(address);
         }
 
+    }
+
+    public void addAddressToDb(String addressToAdd) throws SQLException {
+            mapAddressToID(addressToAdd);
     }
 
     private String generateTimeDistribution(int midnightTime) {
