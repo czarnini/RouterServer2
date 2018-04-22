@@ -47,8 +47,6 @@ public class Handler implements Runnable, DataReadListener {
         result = optimizer.getCurrentBest();
         avgCost += result.getCost();
 
-
-        System.out.println("COST: " + String.format("%.2f", avgCost / 3600.0));
         updateRoute();
         VNSOptimizer.currentBest = null;
         FirebaseDatabase.getInstance().getReference().child("requests").child(routeToOptimize.getKey()).removeValueAsync();
@@ -73,13 +71,12 @@ public class Handler implements Runnable, DataReadListener {
         });
     }
 
-    private void updateRoute(){
-        System.out.println("Final list cost: " + result.getCost());
+    private void updateRoute() {
         Map<String, Object> valuesToSend = new HashMap<>();
-        int [] order = result.getCitiesOrder();
+        int[] order = result.getCitiesOrder();
         for (int i = 0; i < order.length; i++) {
-            meetings.get(i).setMeetingOrder(order[i]);
-            valuesToSend.put(meetings.get(i).getPushId(), meetings.get(i).toMap());
+            meetings.get(order[i]).setMeetingOrder(i);
+            valuesToSend.put(meetings.get(order[i]).getPushId(), meetings.get(order[i]).toMap());
         }
         routeToOptimize.updateChildren(valuesToSend);
     }

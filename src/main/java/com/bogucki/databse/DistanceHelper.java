@@ -114,7 +114,7 @@ public class DistanceHelper {
         if(originID == destinationID){
             return 0;
         }
-        return costs.get(originID).get(destinationID).get(timeOfStart);
+        return costs.get(originID).get(destinationID).get(0);
 
     }
 

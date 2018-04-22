@@ -38,11 +38,6 @@ public class VNSOptimizer {
                     if (opt2Result.isFeasible()) {
                         if ( getDistance( opt2Result) ){
 
-                            /*currentBest.getRoute();
-                            System.out.println("\n\n\n\n");
-                            myCurrentBest.getRoute();
-                            System.out.println("---------------------------------------"+currentBest.getCost()+"/"+myCurrentBest.getCost()+"---------------------------------------------------------");*/
-
                             distance = INITIAL_DISTANCE;
                             lastSuccessIndex = i;
                         } else {
@@ -66,7 +61,6 @@ public class VNSOptimizer {
                 }
 
             }
-
         } catch (
                 Exception e)
 
@@ -91,16 +85,9 @@ public class VNSOptimizer {
 
     private synchronized void initialize() {
         myCurrentBest = Route.newRandomRoute(meetings.size(), distanceHelper);
-        //myCurrentBest.countCost();
         if (null == currentBest) {
             currentBest = new Route(myCurrentBest);
         }
-       /* System.out.println("INIT: \n\n");
-        currentBest.getRoute();
-        System.out.println("\n\n\n\n");
-        myCurrentBest.getRoute();*/
-
-        System.out.println("---------------------------------------"+myCurrentBest.getCost()+"---------------------------------------------------------");
     }
 
 
@@ -124,7 +111,8 @@ public class VNSOptimizer {
     }
 
 
-    public Route getCurrentBest() {
+    public synchronized Route getCurrentBest() {
+        currentBest.getRoute();
         return currentBest;
     }
 

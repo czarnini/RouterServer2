@@ -110,7 +110,7 @@ public class Main {
     private static void initFireBase() {
         FileInputStream serviceAccount = null;
         try {
-            serviceAccount = new FileInputStream("C:\\Users\\boguc\\IdeaProjects\\bogucki\\src\\main\\java\\com\\bogucki\\Router-b74c37ecf7a0.json");
+            serviceAccount = new FileInputStream(new File("").getAbsolutePath().concat("\\src\\main\\java\\com\\bogucki\\Router-b74c37ecf7a0.json"));
             FirebaseOptions options;
             options = new FirebaseOptions.Builder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
