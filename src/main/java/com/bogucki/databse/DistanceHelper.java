@@ -1,7 +1,6 @@
 package com.bogucki.databse;
 
 import com.bogucki.MapsAPI.GoogleMaps;
-import com.bogucki.optimize.Meeting;
 import com.bogucki.optimize.Meeting2;
 import org.apache.commons.lang3.StringUtils;
 
@@ -111,7 +110,7 @@ public class DistanceHelper {
     public int getTime(int origin, int destination, int timeOfStart) {
         int originID = addressesIds.get(origin);
         int destinationID = addressesIds.get(destination);
-        if(originID == destinationID){
+        if (originID == destinationID) {
             return 0;
         }
         return costs.get(originID).get(destinationID).get(0);
@@ -124,7 +123,7 @@ public class DistanceHelper {
         HashMap<Integer, HashMap<Integer, Integer>> result = new HashMap<>();
         String query = " SELECT dest_id, C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15,C16,C17,C18,C19,C20,C21,C22,C23 " +
                 " FROM A" + originID +
-                " WHERE  dest_id IN (" + StringUtils.join(addressesIds," , ") +")";
+                " WHERE  dest_id IN (" + StringUtils.join(addressesIds, " , ") + ")";
         Statement statement = c.createStatement();
         ResultSet rs = statement.executeQuery(query);
 
@@ -153,7 +152,7 @@ public class DistanceHelper {
         ArrayList<Integer> timesToNewAddress = GoogleMaps.getDistances(currentAddresses, address);
         ArrayList<Integer> timesFromNewAddress = GoogleMaps.getDistances(address, currentAddresses);
 
-        if(timesFromNewAddress.size() == 0){
+        if (timesFromNewAddress.size() == 0) {
             return -1;
         }
 
@@ -266,7 +265,7 @@ public class DistanceHelper {
     }
 
     public void addAddressToDb(String addressToAdd) throws SQLException {
-            mapAddressToID(addressToAdd);
+        mapAddressToID(addressToAdd);
     }
 
     private String generateTimeDistribution(int midnightTime) {

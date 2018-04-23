@@ -1,23 +1,16 @@
 package com.bogucki;
 
 import com.bogucki.databse.DistanceHelper;
-import com.bogucki.networking.EchoPostNewAddressHandler;
-import com.bogucki.networking.EchoPostOptimizeHandler;
-import com.bogucki.networking.RootHandler;
 import com.bogucki.optimize.Client;
 import com.bogucki.optimize.Handler;
-import com.bogucki.optimize.Meeting;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.*;
-import com.sun.net.httpserver.HttpServer;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.util.ArrayList;
 
 public class Main {
 

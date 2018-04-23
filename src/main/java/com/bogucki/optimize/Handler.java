@@ -27,9 +27,8 @@ public class Handler implements Runnable, DataReadListener {
     }
 
     private void optimize() {
-        int avgCost = 0;
         VNSOptimizer optimizer = new VNSOptimizer(meetings);
-        Thread[] threads = new Thread[1];
+        Thread[] threads = new Thread[Runtime.getRuntime().availableProcessors()];
         for (int i = 0; i < threads.length; i++) {
             threads[i] = new Thread(optimizer::optimize);
             threads[i].start();
@@ -45,7 +44,7 @@ public class Handler implements Runnable, DataReadListener {
         }
 
         result = optimizer.getCurrentBest();
-        avgCost += result.getCost();
+        result.getRoute();
 
         updateRoute();
         VNSOptimizer.currentBest = null;

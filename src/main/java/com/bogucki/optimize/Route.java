@@ -44,26 +44,43 @@ public class Route {
 
     void swap(int i, int j) {
         int result[] = new int[citiesOrder.length];
-        for (int k = 0; k < result.length; k++) {
-            if (k > i && k < j) {
-                result[k] = citiesOrder[j - (k-i)];
+
+        for (int tmp = 0; tmp < result.length; tmp++) {
+            if (tmp >= i && tmp <= j) {
+                result[tmp] = citiesOrder[j - (tmp - i)];
             } else {
-                result[k] = citiesOrder[k];
+                result[tmp] = citiesOrder[tmp];
             }
         }
-        citiesOrder = Arrays.copyOf(result,result.length);
+
+        for (int tmp = i; tmp <= j +1 ; tmp++) {
+            cost -= distanceHelper.getTime(getCity(tmp - 1), getCity(tmp), 9);
+            cost += distanceHelper.getTime(result[tmp - 1], result[tmp], 9);
+        }
+
+        citiesOrder = Arrays.copyOf(result, result.length);
+    }
+
+    static Route getInitialRoute(int size, DistanceHelper helper) {
+        Route route = new Route(size, helper);
+        for (int i = 0; i < size; i++) {
+            route.setCity(i, i);
+        }
+        route.countCost();
+        return route;
     }
 
     static Route newRandomRoute(int size, DistanceHelper helper) {
         Random generator = new Random();
         Route route = new Route(size, helper);
         for (int i = 0; i < size; i++) {
-/*            int insertIndex;
+            int insertIndex;
             do {
                 insertIndex = generator.nextInt(size);
-            } while (route.getCity(insertIndex) != -1);*/
-            route.setCity(i, i ); //insertIndex
+            } while (route.getCity(insertIndex) != -1);
+            route.setCity(i, insertIndex); //insertIndex
         }
+        route.countCost();
         return route;
     }
 
@@ -76,7 +93,6 @@ public class Route {
     }
 
     public int getCost() {
-        countCost();
         return cost;
     }
 
@@ -85,7 +101,7 @@ public class Route {
      * @param distance musi być parzysty - jedna krawędź to dwa wierzchołki
      * @return
      */
-    Route generateNeightbourRoute(int distance) {
+    Route generateNeighbourRoute(int distance) {
         ArrayList<Integer> indexesToBeMoved = new ArrayList<>();
         Random generator = new Random();
         int protectedIndex;
@@ -101,7 +117,7 @@ public class Route {
             result.setCity(citiesOrder[indexesToBeMoved.get(i)], indexesToBeMoved.get(i + 1));
             result.setCity(citiesOrder[indexesToBeMoved.get(i + 1)], indexesToBeMoved.get(i));
         }
-
+        result.countCost();
         return result;
     }
 
@@ -122,14 +138,15 @@ public class Route {
             for (int i = 0; i < citiesOrder.length - 1; i++) {
                 int index = citiesOrder[i];
                 System.out.println(distanceHelper.getMeetings().get(index).getAddress() + " ETA: " + currentTime);
-                System.out.println(
+                /*System.out.println(
                         String.format("Time form %s to %s is: %d seconds",
                         distanceHelper.getMeetings().get(index).getAddress(),
                         distanceHelper.getMeetings().get(citiesOrder[i+1]).getAddress(),
                         distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 9 )
                         )
                 );
-                currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 9 );
+*/
+                currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 9);
             }
             System.out.println(distanceHelper.getMeetings().get(citiesOrder.length - 1).getAddress() + " ETA: " + currentTime);
 
@@ -139,5 +156,10 @@ public class Route {
             e.printStackTrace();
         }
 
+    }
+
+
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 }

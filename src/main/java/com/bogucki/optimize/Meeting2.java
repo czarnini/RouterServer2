@@ -15,6 +15,20 @@ public class Meeting2 {
     private int meetingOrder = -1;
 
 
+    public Meeting2(String address) {
+        this.address = address;
+
+
+        this.pushId = "pushId";
+        this.client = "client";
+        this.reason = "reason";
+        this.earliestTimePossible = -1;
+        this.latestTimePossible = 1;
+        meetingOrder = -1;
+
+    }
+
+
     public Meeting2(String pushId, String client, String address, String reason,
                     long earliestTimePossible, long latestTimePossible) {
         this.pushId = pushId;
@@ -103,13 +117,13 @@ public class Meeting2 {
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
-        result.put("pushId",                   pushId);
-        result.put("client",                   client);
-        result.put("address",                  address);
-        result.put("reason",                   reason);
+        result.put("pushId", pushId);
+        result.put("client", client);
+        result.put("address", address);
+        result.put("reason", reason);
         result.put("earliestTimePossible", earliestTimePossible);
         result.put("latestTimePossible", latestTimePossible);
-        result.put("meetingOrder",             meetingOrder);
+        result.put("meetingOrder", meetingOrder);
         return result;
     }
 
