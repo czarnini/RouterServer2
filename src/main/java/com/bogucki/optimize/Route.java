@@ -107,7 +107,15 @@ public class Route {
             result.setCity(getCity(i+1), i);
             result.setCity(tmp, i+1);
         }
-        result.countCost();
+
+        for (int i = 0; i < distance; i++) {
+            result.setCost(
+                    result.getCost()
+                            - distanceHelper.getTime(citiesOrder[i],citiesOrder[i+1],9)
+                            + distanceHelper.getTime(result.getCity(i),result.getCity(i+1),9)
+            );
+
+        }
         return result;
     }
 

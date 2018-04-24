@@ -111,13 +111,12 @@ public class VNSOptimizer {
             }
         }
 
-        //opt2ResultLocal.countCost();
         return opt2ResultLocal;
     }
 
 
     public synchronized Route getCurrentBest() {
-        System.out.println("better than input route found? " + String.valueOf(inputRoute.getCost() < currentBest.getCost()));
+        System.out.println(currentBest.getCost() + " vs " + inputRoute.getCost() +" better than input route found? " + (inputRoute.getCost() < currentBest.getCost() )+ "");
         return inputRoute.getCost() < currentBest.getCost() ? inputRoute : currentBest;
     }
 
