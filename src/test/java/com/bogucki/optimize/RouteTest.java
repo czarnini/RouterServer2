@@ -1,6 +1,7 @@
 package com.bogucki.optimize;
 
 import com.bogucki.databse.DistanceHelper;
+import com.bogucki.optimize.models.Meeting;
 import org.junit.Before;
 import org.junit.Test;
 

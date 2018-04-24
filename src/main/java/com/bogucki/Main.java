@@ -1,8 +1,8 @@
 package com.bogucki;
 
 import com.bogucki.databse.DistanceHelper;
-import com.bogucki.optimize.Client;
-import com.bogucki.optimize.OptimizationHandler;
+import com.bogucki.optimize.models.Client;
+import com.bogucki.optimize.OptimizationManager;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -78,7 +78,7 @@ public class Main {
                         .child("meetings")
                         .child(snapshot.getKey());
 
-                new Thread(new OptimizationHandler(routeToOptimize)).start();
+                new Thread(new OptimizationManager(routeToOptimize)).start();
             }
 
             @Override

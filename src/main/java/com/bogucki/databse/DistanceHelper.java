@@ -1,7 +1,7 @@
 package com.bogucki.databse;
 
 import com.bogucki.MapsAPI.GoogleMaps;
-import com.bogucki.optimize.Meeting;
+import com.bogucki.optimize.models.Meeting;
 import org.apache.commons.lang3.StringUtils;
 
 import java.sql.*;

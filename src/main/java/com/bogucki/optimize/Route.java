@@ -136,14 +136,6 @@ public class Route {
             for (int i = 0; i < citiesOrder.length - 1; i++) {
                 int index = citiesOrder[i];
                 System.out.println(distanceHelper.getMeetings().get(index).getAddress() + " ETA: " + currentTime);
-                /*System.out.println(
-                        String.format("Time form %s to %s is: %d seconds",
-                        distanceHelper.getMeetings().get(index).getAddress(),
-                        distanceHelper.getMeetings().get(citiesOrder[i+1]).getAddress(),
-                        distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 9 )
-                        )
-                );
-*/
                 currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 9);
             }
             System.out.println(distanceHelper.getMeetings().get(citiesOrder.length - 1).getAddress() + " ETA: " + currentTime);

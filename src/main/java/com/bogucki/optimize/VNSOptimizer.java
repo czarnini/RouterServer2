@@ -2,29 +2,29 @@ package com.bogucki.optimize;
 
 
 import com.bogucki.databse.DistanceHelper;
+import com.bogucki.optimize.models.Meeting;
 
 import java.util.ArrayList;
 
-public class VNSOptimizer {
+class VNSOptimizer {
     private volatile ArrayList<Meeting> meetings;
     private volatile DistanceHelper distanceHelper;
 
-    public static volatile Route currentBest = null;
+    static volatile Route currentBest = null;
 
     private Route myCurrentBest = null;
-    private Route inputRoute = null;
 
 
     private static int INITIAL_DISTANCE = 4;
-
     private static int DISTANCE_STEP = 8;
 
-    public VNSOptimizer(ArrayList<Meeting> meetings) {
-        this.meetings = meetings;
-        distanceHelper = new DistanceHelper(meetings);
+    VNSOptimizer(DistanceHelper distanceHelper) {
+        this.distanceHelper = distanceHelper;
+        this.meetings = distanceHelper.getMeetings();
+
     }
 
-    public void optimize() {
+    void optimize() {
         try {
             initialize();
             long start = System.currentTimeMillis();
@@ -37,8 +37,7 @@ public class VNSOptimizer {
                 while (distance < meetings.size()) {
                     Route opt2Result = opt2(myCurrentBest.generateNeighbourRoute(distance));
                     if (opt2Result.isFeasible()) {
-                        if (getDistance(opt2Result)) {
-
+                        if (isBetterRouteFound(opt2Result)) {
                             distance = INITIAL_DISTANCE;
                             lastSuccessIndex = i;
                         } else {
@@ -54,7 +53,6 @@ public class VNSOptimizer {
 
                 if (i - lastSuccessIndex > 10000) {
                     myCurrentBest = Route.newRandomRoute(meetings.size(), distanceHelper);
-                    //  myCurrentBest.countCost();
                 }
 
                 if (i - lastSuccessIndex > 1000000) {
@@ -62,30 +60,24 @@ public class VNSOptimizer {
                 }
 
             }
-        } catch (
-                Exception e)
-
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    synchronized private boolean getDistance(Route opt2Result) {
-//       currentBest.countCost();
+    synchronized private boolean isBetterRouteFound(Route opt2Result) {
         if ((opt2Result.getCost() >= currentBest.getCost())) {
             return false;
         } else {
             System.out.println(Thread.currentThread().getName() + "new best found! " + String.format("%.2f", opt2Result.getCost() / 3600.0));
             currentBest = new Route(opt2Result);
             myCurrentBest = new Route(currentBest);
-
             return true;
         }
     }
 
     private synchronized void initialize() {
-        inputRoute = Route.getInitialRoute(meetings.size(), distanceHelper);
         myCurrentBest = Route.getInitialRoute(meetings.size(), distanceHelper);
         if (null == currentBest) {
             currentBest = new Route(myCurrentBest);
@@ -93,8 +85,8 @@ public class VNSOptimizer {
     }
 
 
-    public Route opt2(Route opt2ResultLocal) {
-        int distA ;
+    private Route opt2(Route opt2ResultLocal) {
+        int distA;
         int distB;
         for (int i = 0; i < meetings.size() - 2; i++) {
             for (int j = i + 2; j < meetings.size() - 1; j++) {
@@ -106,7 +98,7 @@ public class VNSOptimizer {
                 distB = distanceHelper.getTime(IthCity, jThCity, 9) + distanceHelper.getTime(IthPlusOneCity, jThPlusOneCity, 9);
 
                 if (distA > distB) {
-                    opt2ResultLocal.swap(i+1, j-1);
+                    opt2ResultLocal.swap(i + 1, j - 1);
                 }
             }
         }
@@ -115,9 +107,9 @@ public class VNSOptimizer {
     }
 
 
-    public synchronized Route getCurrentBest() {
-        System.out.println(currentBest.getCost() + " vs " + inputRoute.getCost() +" better than input route found? " + (inputRoute.getCost() < currentBest.getCost() )+ "");
-        return inputRoute.getCost() < currentBest.getCost() ? inputRoute : currentBest;
+    synchronized Route getCurrentBest() {
+        currentBest.getRoute();
+        return currentBest;
     }
 
 }

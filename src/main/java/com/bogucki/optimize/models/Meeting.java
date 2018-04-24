@@ -1,4 +1,4 @@
-package com.bogucki.optimize;
+package com.bogucki.optimize.models;
 
 import com.google.cloud.firestore.annotation.Exclude;
 

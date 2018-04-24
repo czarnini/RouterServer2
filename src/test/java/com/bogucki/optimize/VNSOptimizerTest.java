@@ -1,5 +1,6 @@
 package com.bogucki.optimize;
 
+import com.bogucki.optimize.models.Meeting;
 import org.junit.Test;
 
 import java.util.ArrayList;

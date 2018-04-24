@@ -1,4 +1,4 @@
-package com.bogucki.optimize;
+package com.bogucki.optimize.models;
 
 public class Client {
     private String address;
