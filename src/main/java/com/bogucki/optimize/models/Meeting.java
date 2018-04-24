@@ -13,6 +13,7 @@ public class Meeting {
     private long earliestTimePossible;
     private long latestTimePossible;
     private int meetingOrder = -1;
+    private int planedTimeOfVisit = -1;
 
 
     public Meeting(String address) {
@@ -25,6 +26,7 @@ public class Meeting {
         this.earliestTimePossible = -1;
         this.latestTimePossible = 1;
         meetingOrder = -1;
+        planedTimeOfVisit = -1;
 
     }
 
@@ -38,9 +40,10 @@ public class Meeting {
         this.earliestTimePossible = earliestTimePossible;
         this.latestTimePossible = latestTimePossible;
         meetingOrder = -1;
+        planedTimeOfVisit = -1;
     }
 
-    public Meeting(String pushId, String client, String address, String reason, long earliestTimePossible, long latestTimePossible, int meetingOrder) {
+    public Meeting(String pushId, String client, String address, String reason, long earliestTimePossible, long latestTimePossible, int meetingOrder, int planedTimeOfVisit) {
         this.pushId = pushId;
         this.client = client;
         this.address = address;
@@ -48,6 +51,7 @@ public class Meeting {
         this.earliestTimePossible = earliestTimePossible;
         this.latestTimePossible = latestTimePossible;
         this.meetingOrder = meetingOrder;
+        this.planedTimeOfVisit = planedTimeOfVisit;
     }
 
     public String getClient() {
@@ -124,11 +128,16 @@ public class Meeting {
         result.put("earliestTimePossible", earliestTimePossible);
         result.put("latestTimePossible", latestTimePossible);
         result.put("meetingOrder", meetingOrder);
+        result.put("planedTimeOfVisit", planedTimeOfVisit);
         return result;
     }
 
     @Override
     public String toString() {
         return address + "\t" + meetingOrder;
+    }
+
+    public void setPlanedTimeOfVisit(int planedTimeOfVisit) {
+        this.planedTimeOfVisit = planedTimeOfVisit;
     }
 }

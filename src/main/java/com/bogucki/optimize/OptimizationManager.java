@@ -4,6 +4,8 @@ import com.bogucki.databse.DistanceHelper;
 import com.bogucki.optimize.models.Meeting;
 import com.google.firebase.database.*;
 
+import java.awt.image.AreaAveragingScaleFilter;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +13,6 @@ import java.util.Map;
 public class OptimizationManager implements Runnable {
     private Route result;
     private DatabaseReference routeToOptimize;
-    private ArrayList<Meeting> meetings = new ArrayList<>();
     private DistanceHelper distanceHelper;
 
     public OptimizationManager(DatabaseReference routeToOptimize) {
@@ -24,9 +25,11 @@ public class OptimizationManager implements Runnable {
         routeToOptimize.orderByChild("meetingOrder").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
+                ArrayList<Meeting> meetings = new ArrayList<>();
                 for (DataSnapshot tmp : snapshot.getChildren()) {
                     meetings.add(tmp.getValue(Meeting.class));
                 }
+                distanceHelper = new DistanceHelper(meetings);
                 optimize();
             }
 
@@ -39,7 +42,6 @@ public class OptimizationManager implements Runnable {
 
 
     private void optimize() {
-        distanceHelper = new DistanceHelper(meetings);
         VNSOptimizer optimizer = new VNSOptimizer(distanceHelper);
         Thread[] threads = new Thread[Runtime.getRuntime().availableProcessors()];
         for (int i = 0; i < threads.length; i++) {
@@ -65,12 +67,20 @@ public class OptimizationManager implements Runnable {
     }
 
     private void publishOptimalRoute() {
+        int currentTime = 0;
         Map<String, Object> valuesToSend = new HashMap<>();
         int[] order = result.getCitiesOrder();
-        for (int i = 0; i < order.length; i++) {
-            meetings.get(order[i]).setMeetingOrder(i);
-            valuesToSend.put(meetings.get(order[i]).getPushId(), meetings.get(order[i]).toMap());
+        for (int i = 0; i < order.length - 1; i++) {
+            distanceHelper.getMeetings().get(order[i]).setMeetingOrder(i);
+            distanceHelper.getMeetings().get(order[i]).setPlanedTimeOfVisit(currentTime);
+            currentTime += distanceHelper.getTime(order[i], order[i+1],9);
+            valuesToSend.put(distanceHelper.getMeetings().get(order[i]).getPushId(), distanceHelper.getMeetings().get(order[i]).toMap());
         }
+
+        distanceHelper.getMeetings().get(order[order.length-1]).setMeetingOrder(order.length-1);
+        distanceHelper.getMeetings().get(order[order.length-1]).setPlanedTimeOfVisit(currentTime);
+        valuesToSend.put(distanceHelper.getMeetings().get(order[order.length-1]).getPushId(), distanceHelper.getMeetings().get(order[order.length-1]).toMap());
+
         routeToOptimize.updateChildren(valuesToSend, this::cleanUpRequest);
     }
 
