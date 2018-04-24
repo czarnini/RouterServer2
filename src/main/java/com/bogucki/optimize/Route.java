@@ -3,7 +3,6 @@ package com.bogucki.optimize;
 
 import com.bogucki.databse.DistanceHelper;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -53,7 +52,7 @@ public class Route {
             }
         }
 
-        for (int tmp = i; tmp <= j +1 ; tmp++) {
+        for (int tmp = i; tmp <= j + 1; tmp++) {
             cost -= distanceHelper.getTime(getCity(tmp - 1), getCity(tmp), 9);
             cost += distanceHelper.getTime(result[tmp - 1], result[tmp], 9);
         }
@@ -102,20 +101,11 @@ public class Route {
      * @return
      */
     Route generateNeighbourRoute(int distance) {
-        ArrayList<Integer> indexesToBeMoved = new ArrayList<>();
-        Random generator = new Random();
-        int protectedIndex;
-        for (int i = 0; i < distance; i++) {
-            do {
-                protectedIndex = generator.nextInt(citiesOrder.length);
-            } while (indexesToBeMoved.indexOf(protectedIndex) != -1);
-            indexesToBeMoved.add(protectedIndex);
-        }
-
         Route result = new Route(this);
-        for (int i = 0; i < indexesToBeMoved.size() - 1; i += 2) {
-            result.setCity(citiesOrder[indexesToBeMoved.get(i)], indexesToBeMoved.get(i + 1));
-            result.setCity(citiesOrder[indexesToBeMoved.get(i + 1)], indexesToBeMoved.get(i));
+        for (int i = 0; i < distance-1; i++) {
+            int tmp = result.getCity(i);
+            result.setCity(getCity(i+1), i);
+            result.setCity(tmp, i+1);
         }
         result.countCost();
         return result;
