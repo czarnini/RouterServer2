@@ -6,7 +6,7 @@ import com.bogucki.databse.DistanceHelper;
 import java.util.ArrayList;
 
 public class VNSOptimizer {
-    private volatile ArrayList<Meeting2> meetings;
+    private volatile ArrayList<Meeting> meetings;
     private volatile DistanceHelper distanceHelper;
 
     public static volatile Route currentBest = null;
@@ -19,7 +19,7 @@ public class VNSOptimizer {
 
     private static int DISTANCE_STEP = 8;
 
-    public VNSOptimizer(ArrayList<Meeting2> meetings) {
+    public VNSOptimizer(ArrayList<Meeting> meetings) {
         this.meetings = meetings;
         distanceHelper = new DistanceHelper(meetings);
     }

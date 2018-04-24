@@ -1,7 +1,7 @@
 package com.bogucki.databse;
 
 import com.bogucki.MapsAPI.GoogleMaps;
-import com.bogucki.optimize.Meeting2;
+import com.bogucki.optimize.Meeting;
 import org.apache.commons.lang3.StringUtils;
 
 import java.sql.*;
@@ -12,7 +12,7 @@ import java.util.List;
 public class DistanceHelper {
 
     private static final String ADDRESSES_DICT = "ADDRESSES_DICT";
-    private final ArrayList<Meeting2> meetings;
+    private final ArrayList<Meeting> meetings;
     private Connection c;
 
 
@@ -48,7 +48,7 @@ public class DistanceHelper {
         return builder.toString();
     }
 
-    public DistanceHelper(ArrayList<Meeting2> meetings) {
+    public DistanceHelper(ArrayList<Meeting> meetings) {
         this.meetings = meetings;
         try {
             String databaseUrl = "jdbc:sqlite:Distances.db";
@@ -69,7 +69,7 @@ public class DistanceHelper {
         addressesIds = new ArrayList<>();
         costs = new HashMap<>();
 
-        for (Meeting2 meeting : meetings) {
+        for (Meeting meeting : meetings) {
             try {
                 int tmpCityID = mapAddressToID(meeting.getAddress());
                 addressesIds.add(tmpCityID);
@@ -290,7 +290,7 @@ public class DistanceHelper {
         return result.toString();
     }
 
-    public ArrayList<Meeting2> getMeetings() {
+    public ArrayList<Meeting> getMeetings() {
         return meetings;
     }
 }

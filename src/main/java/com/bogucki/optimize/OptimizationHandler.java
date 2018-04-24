@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Handler implements Runnable, DataReadListener {
+public class OptimizationHandler implements Runnable, DataReadListener {
     Route result;
     DatabaseReference routeToOptimize;
-    private ArrayList<Meeting2> meetings = new ArrayList<>();
+    private ArrayList<Meeting> meetings = new ArrayList<>();
 
-    public Handler(DatabaseReference routeToOptimize) {
+    public OptimizationHandler(DatabaseReference routeToOptimize) {
         System.out.println(routeToOptimize.getRef());
         this.routeToOptimize = routeToOptimize;
     }
@@ -58,7 +58,7 @@ public class Handler implements Runnable, DataReadListener {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot tmp : snapshot.getChildren()) {
-                    meetings.add(tmp.getValue(Meeting2.class));
+                    meetings.add(tmp.getValue(Meeting.class));
                 }
                 listener.onDataRead();
             }

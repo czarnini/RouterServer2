@@ -10,13 +10,13 @@ public class RouteTest {
 
     private String[] addresses = new String[]{"janowskiego 13,warszawa", "wspólna 73,warszawa", "mielczarskiego 10,warszawa", "konduktorska 2,warszawa",
             "komorska 29/33,warszawa", "mielczarskiego 10,warszawa", "komorska 29/33,warszawa", "mielczarskiego 10,warszawa", "komorska 29/33,warszawa", "mielczarskiego 10,warszawa"};
-    private ArrayList<Meeting2> meetings = new ArrayList<>();
+    private ArrayList<Meeting> meetings = new ArrayList<>();
     private Route route;
 
     @Before
     public void setUp() throws Exception {
         for (String address : addresses) {
-            meetings.add(new Meeting2(address));
+            meetings.add(new Meeting(address));
         }
         route = Route.getInitialRoute(meetings.size(), new DistanceHelper(meetings));
         route.getRoute();
