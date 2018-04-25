@@ -4,8 +4,11 @@ import com.bogucki.databse.DistanceHelper;
 import com.bogucki.optimize.models.Meeting;
 import com.google.firebase.database.*;
 
+import java.awt.*;
 import java.awt.image.AreaAveragingScaleFilter;
+import java.io.IOException;
 import java.lang.reflect.Array;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -60,6 +63,13 @@ public class OptimizationManager implements Runnable {
 
         result = optimizer.getCurrentBest();
         result.getRoute();
+        if(Desktop.isDesktopSupported()){
+            try {
+                Desktop.getDesktop().browse(result.getGoogleMapsUrl());
+            } catch (IOException | URISyntaxException e) {
+                e.printStackTrace();
+            }
+        }
         publishOptimalRoute();
         VNSOptimizer.currentBest = null;
 
@@ -67,13 +77,13 @@ public class OptimizationManager implements Runnable {
     }
 
     private void publishOptimalRoute() {
-        int currentTime = 0;
+        long currentTime = System.currentTimeMillis();
         Map<String, Object> valuesToSend = new HashMap<>();
         int[] order = result.getCitiesOrder();
         for (int i = 0; i < order.length - 1; i++) {
             distanceHelper.getMeetings().get(order[i]).setMeetingOrder(i);
             distanceHelper.getMeetings().get(order[i]).setPlanedTimeOfVisit(currentTime);
-            currentTime += distanceHelper.getTime(order[i], order[i+1],9);
+            currentTime += distanceHelper.getTime(order[i], order[i+1],9) *1000;
             valuesToSend.put(distanceHelper.getMeetings().get(order[i]).getPushId(), distanceHelper.getMeetings().get(order[i]).toMap());
         }
 

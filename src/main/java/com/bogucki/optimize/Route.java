@@ -2,7 +2,10 @@ package com.bogucki.optimize;
 
 
 import com.bogucki.databse.DistanceHelper;
+import com.bogucki.optimize.models.Meeting;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -151,5 +154,17 @@ public class Route {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public URI getGoogleMapsUrl() throws URISyntaxException {
+        StringBuilder result = new StringBuilder("https://www.google.pl/maps/dir/");
+        for (Meeting meeting :
+                distanceHelper.getMeetings()) {
+            result.append(meeting.getAddress().replaceAll(" ", "%20") + "/");
+        }
+
+        System.out.println(result.toString());
+
+        return new URI(result.toString());
     }
 }

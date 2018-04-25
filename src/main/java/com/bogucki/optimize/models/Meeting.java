@@ -13,7 +13,7 @@ public class Meeting {
     private long earliestTimePossible;
     private long latestTimePossible;
     private int meetingOrder = -1;
-    private int planedTimeOfVisit = -1;
+    private long planedTimeOfVisit = -1;
 
 
     public Meeting(String address) {
@@ -137,7 +137,7 @@ public class Meeting {
         return address + "\t" + meetingOrder;
     }
 
-    public void setPlanedTimeOfVisit(int planedTimeOfVisit) {
+    public void setPlanedTimeOfVisit(long planedTimeOfVisit) {
         this.planedTimeOfVisit = planedTimeOfVisit;
     }
 }
