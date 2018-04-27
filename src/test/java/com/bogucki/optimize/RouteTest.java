@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class RouteTest {
 
-    private String[] addresses = new String[]{"janowskiego 13,warszawa", "wspólna 73,warszawa", "mielczarskiego 10,warszawa", "konduktorska 2,warszawa",
-            "komorska 29/33,warszawa", "mielczarskiego 10,warszawa", "komorska 29/33,warszawa", "mielczarskiego 10,warszawa", "komorska 29/33,warszawa", "mielczarskiego 10,warszawa"};
+    private String[] addresses = new String[]{"janowskiego 13,warszawa", "wspólna 73,warszawa",
+            "mielczarskiego 10,warszawa", "konduktorska 2,warszawa", "janowskiego 13,warszawa", "wspólna 73,warszawa"};
     private ArrayList<Meeting> meetings = new ArrayList<>();
     private Route route;
 

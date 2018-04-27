@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b14f0ed-e364-4f3f-94b9-6449ea8edda7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Distances.db" afterPath="$PROJECT_DIR$/Distances.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8fecd06c-335f-4ff0-94c1-f0bb004aa258.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/8fecd06c-335f-4ff0-94c1-f0bb004aa258.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8fecd06c-335f-4ff0-94c1-f0bb004aa258/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/8fecd06c-335f-4ff0-94c1-f0bb004aa258/_metadata_/metadata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8fecd06c-335f-4ff0-94c1-f0bb004aa258/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/8fecd06c-335f-4ff0-94c1-f0bb004aa258/_metadata_/metadata.values.at" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/Main$1.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/Main$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/Main.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/databse/DistanceHelper.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/databse/DistanceHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/Route.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/Route.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/VNSOptimizer.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/VNSOptimizer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/models/Meeting.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/models/Meeting.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -19,6 +25,11 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/bogucki$VNSOptimizerTest_testVNS.coverage" NAME="VNSOptimizerTest.testVNS Coverage Results" MODIFIED="1524821121120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.bogucki.optimize.*</FILTER>
+    </SUITE>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -51,39 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="80" column="35" lean-forward="false" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1524651538308" expanded="true" signature="4007:4013" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DistanceHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/databse/DistanceHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-              <folding>
-                <marker date="1524651538317" expanded="true" signature="3631:3874" ph="SELECT dest_... AmissingValue" />
-                <marker date="1524651538317" expanded="true" signature="5823:5993" ph="CREATE TABLE... AmissingValue" />
-                <marker date="1524651538317" expanded="true" signature="6576:6899" ph="INSERT INTO AmissingValue... " />
-                <marker date="1524651538317" expanded="true" signature="7157:7198" ph="SELECT ADDRE... ADDRESSES_DICT" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="VNSOptimizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="36" column="52" lean-forward="false" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+            <state relative-caret-position="561">
+              <caret line="36" column="76" lean-forward="false" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RouteTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java">
+      <file leaf-file-name="VNSOptimizerTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+            <state relative-caret-position="334">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,22 +87,19 @@
       <file leaf-file-name="Route.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="119" column="95" lean-forward="true" selection-start-line="119" selection-start-column="95" selection-end-line="119" selection-end-column="95" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Meeting.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/models/Meeting.java">
+      <file leaf-file-name="RouteTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="120" column="12" lean-forward="true" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
-              <folding>
-                <element signature="e#3712#3713#0" expanded="true" />
-                <element signature="e#3770#3771#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="119" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,36 +107,9 @@
       <file leaf-file-name="OptimizationManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="84" column="63" lean-forward="false" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
+            <state relative-caret-position="850">
+              <caret line="63" column="27" lean-forward="false" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ADDRESSES_DICT" pinned="false" current-in-tab="false">
-        <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.ADDRESSES_DICT">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="A101" pinned="false" current-in-tab="false">
-        <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A101">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="A100" pinned="false" current-in-tab="false">
-        <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A100">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -174,7 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mły</find>
       <find>addAddress</find>
       <find>replacea</find>
       <find>get di</find>
@@ -204,6 +156,7 @@
       <find>herbsta 4</find>
       <find>getRoute</find>
       <find>plan</find>
+      <find>wspólna</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -516,13 +469,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/databse/DistanceHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Meeting2.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Handler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/models/Meeting.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java" />
       </list>
     </option>
   </component>
@@ -533,10 +486,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1467" />
-    <option name="y" value="18" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="-131" />
+    <option name="y" value="-18" />
+    <option name="width" value="1481" />
+    <option name="height" value="986" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -554,6 +507,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -600,10 +555,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -615,7 +568,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Distances.db" />
-    <property name="SearchEverywhereHistoryKey" value="newRan&#9;PSI&#9;JAVA://com.bogucki.optimize.Route#newRandomRoute&#10;Vns&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/VNSOptimizer.java&#10;Cli&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/Client.java&#10;Mee&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/Meeting2.java" />
+    <property name="SearchEverywhereHistoryKey" value="Vn&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java&#10;RouteT&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/RouteTest.java&#10;VNS&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/VNSOptimizer.java&#10;newRan&#9;PSI&#9;JAVA://com.bogucki.optimize.Route#newRandomRoute&#10;Vns&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/VNSOptimizer.java&#10;Cli&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/Client.java&#10;Mee&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/Meeting2.java" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
   </component>
   <component name="RecentsManager">
@@ -647,7 +600,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.VNSOptimizerTest.testVNS">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -666,31 +619,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="bogucki" />
       <envs />
-    </configuration>
-    <configuration name="RouteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.bogucki.optimize.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="bogucki" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.bogucki.optimize" />
-      <option name="MAIN_CLASS_NAME" value="com.bogucki.optimize.RouteTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
     </configuration>
     <configuration name="RouteTest.shouldGenerateNeighbourdRoute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -717,31 +645,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="RouteTest.shouldSwapFirstElementWithForth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.bogucki.optimize.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="bogucki" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.bogucki.optimize" />
-      <option name="MAIN_CLASS_NAME" value="com.bogucki.optimize.RouteTest" />
-      <option name="METHOD_NAME" value="shouldSwapFirstElementWithForth" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <configuration name="RouteTest.shouldSwapRouteBetweenFirstElementWithForth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -755,6 +658,56 @@
       <option name="PACKAGE_NAME" value="com.bogucki.optimize" />
       <option name="MAIN_CLASS_NAME" value="com.bogucki.optimize.RouteTest" />
       <option name="METHOD_NAME" value="shouldSwapRouteBetweenFirstElementWithForth" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="VNSOptimizerTest.testOpt2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.bogucki.optimize.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="bogucki" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.bogucki.optimize" />
+      <option name="MAIN_CLASS_NAME" value="com.bogucki.optimize.VNSOptimizerTest" />
+      <option name="METHOD_NAME" value="testOpt2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="VNSOptimizerTest.testVNS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.bogucki.optimize.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="bogucki" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.bogucki.optimize" />
+      <option name="MAIN_CLASS_NAME" value="com.bogucki.optimize.VNSOptimizerTest" />
+      <option name="METHOD_NAME" value="testVNS" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -849,18 +802,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.RouteTest.shouldSwapFirstElementWithForth" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.RouteTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RouteTest.shouldSwapRouteBetweenFirstElementWithForth" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RouteTest.shouldGenerateNeighbourdRoute" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.RouteTest.shouldSwapRouteBetweenFirstElementWithForth" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.RouteTest.shouldGenerateNeighbourdRoute" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.VNSOptimizerTest.testOpt2" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.VNSOptimizerTest.testVNS" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.RouteTest.shouldSwapRouteBetweenFirstElementWithForth" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.RouteTest.shouldGenerateNeighbourdRoute" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RouteTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RouteTest.shouldSwapFirstElementWithForth" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.VNSOptimizerTest.testVNS" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.VNSOptimizerTest.testOpt2" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.RouteTest.shouldSwapRouteBetweenFirstElementWithForth" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RouteTest.shouldGenerateNeighbourdRoute" />
       </list>
     </recent_temporary>
   </component>
@@ -888,47 +841,57 @@
       <workItem from="1523690515137" duration="280000" />
       <workItem from="1523692474106" duration="18289000" />
       <workItem from="1524471309222" duration="23655000" />
-      <workItem from="1524650656618" duration="8929000" />
+      <workItem from="1524650656618" duration="9195000" />
+      <workItem from="1524815445781" duration="6702000" />
+      <workItem from="1524827111175" duration="866000" />
     </task>
+    <task id="LOCAL-00001" summary="foo">
+      <created>1524666564187</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1524666564187</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RouteTest_shouldSwapRouteBetweenFirstElementWithForth - 2018.04.23 at 16h 35m 31s.xml">
-      <configuration name="RouteTest.shouldSwapRouteBetweenFirstElementWithForth" configurationId="JUnit" />
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.04.27 at 11h 25m 20s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RouteTest_shouldSwapRouteBetweenFirstElementWithForth - 2018.04.23 at 16h 38m 08s.xml">
-      <configuration name="RouteTest.shouldSwapRouteBetweenFirstElementWithForth" configurationId="JUnit" />
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.04.27 at 11h 25m 22s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RouteTest_shouldSwapRouteBetweenFirstElementWithForth - 2018.04.23 at 16h 40m 49s.xml">
-      <configuration name="RouteTest.shouldSwapRouteBetweenFirstElementWithForth" configurationId="JUnit" />
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.04.27 at 11h 26m 30s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RouteTest_shouldSwapRouteBetweenFirstElementWithForth - 2018.04.23 at 16h 42m 38s.xml">
-      <configuration name="RouteTest.shouldSwapRouteBetweenFirstElementWithForth" configurationId="JUnit" />
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.04.27 at 11h 26m 39s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RouteTest_shouldSwapRouteBetweenFirstElementWithForth - 2018.04.23 at 16h 43m 25s.xml">
-      <configuration name="RouteTest.shouldSwapRouteBetweenFirstElementWithForth" configurationId="JUnit" />
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.04.27 at 11h 27m 36s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RouteTest_shouldSwapRouteBetweenFirstElementWithForth - 2018.04.23 at 16h 45m 00s.xml">
-      <configuration name="RouteTest.shouldSwapRouteBetweenFirstElementWithForth" configurationId="JUnit" />
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.04.27 at 11h 29m 03s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RouteTest_shouldSwapRouteBetweenFirstElementWithForth - 2018.04.23 at 16h 54m 24s.xml">
-      <configuration name="RouteTest.shouldSwapRouteBetweenFirstElementWithForth" configurationId="JUnit" />
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.04.27 at 11h 29m 20s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RouteTest_shouldSwapRouteBetweenFirstElementWithForth - 2018.04.23 at 16h 55m 10s.xml">
-      <configuration name="RouteTest.shouldSwapRouteBetweenFirstElementWithForth" configurationId="JUnit" />
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.04.27 at 11h 30m 44s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RouteTest_shouldSwapRouteBetweenFirstElementWithForth - 2018.04.23 at 17h 07m 15s.xml">
-      <configuration name="RouteTest.shouldSwapRouteBetweenFirstElementWithForth" configurationId="JUnit" />
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.04.27 at 11h 32m 34s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RouteTest_shouldSwapRouteBetweenFirstElementWithForth - 2018.04.23 at 17h 08m 59s.xml">
-      <configuration name="RouteTest.shouldSwapRouteBetweenFirstElementWithForth" configurationId="JUnit" />
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.04.27 at 13h 10m 31s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67891000" />
+    <option name="totallyTimeSpent" value="75725000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="18" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -940,13 +903,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5815991" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="23" width="1920" height="1017" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24496289" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="23" width="1920" height="1017" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28419936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18095239" sideWeight="0.49204665" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932934" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18095239" sideWeight="0.49204665" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28802082" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -959,8 +921,41 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34040296" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932934" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28802082" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3984451" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47035956" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="23" width="1920" height="1017" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28419936" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34040296" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18095239" sideWeight="0.49204665" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932934" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15833333" sideWeight="0.50795335" order="6" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -968,23 +963,47 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="foo" />
+    <option name="LAST_COMMIT_MESSAGE" value="foo" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java</url>
+          <line>57</line>
+          <properties />
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java</url>
+          <line>123</line>
+          <properties />
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="83" />
+      <option name="time" value="92" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/networking/EchoPostNewAddressHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/networking/EchoPostNewAddressHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/Router-b74c37ecf7a0.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1010,20 +1029,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1524651538308" expanded="true" signature="4007:4013" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/networking/EchoPostNewAddressHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/networking/EchoPostNewAddressHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/Router-b74c37ecf7a0.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1049,10 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1524651538308" expanded="true" signature="4007:4013" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1099,13 +1104,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Map.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Meeting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Meeting.java" />
     <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A27">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1120,14 +1119,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/networking/EchoPostOptimizeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="69" column="67" lean-forward="false" selection-start-line="69" selection-start-column="67" selection-end-line="69" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/networking/EchoPostOptimizeHandler.java" />
     <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A49">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1163,20 +1155,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/networking/EchoPostNewAddressHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="69" lean-forward="false" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/networking/EchoPostNewAddressHandler.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Client.java" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8fecd06c-335f-4ff0-94c1-f0bb004aa258/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1216,18 +1196,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="708">
           <caret line="72" column="64" lean-forward="false" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/DataReadListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/DataReadListener.java" />
     <entry file="uml://JAVA/com.bogucki.optimize.VNSOptimizer">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1248,31 +1220,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
+        <state relative-caret-position="1156">
           <caret line="80" column="35" lean-forward="false" selection-start-line="80" selection-start-column="35" selection-end-line="80" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1524651538308" expanded="true" signature="4007:4013" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Meeting2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Meeting2.java" />
     <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A2">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1284,44 +1237,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="554" column="13" lean-forward="false" selection-start-line="554" selection-start-column="13" selection-end-line="554" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="36" column="52" lean-forward="false" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Handler.java" />
     <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A101">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A100">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -1330,7 +1250,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/databse/DistanceHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="2040">
           <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding>
             <marker date="1524651538317" expanded="true" signature="3631:3874" ph="SELECT dest_... AmissingValue" />
@@ -1341,6 +1261,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/models/Meeting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="85" column="31" lean-forward="false" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A100">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.ADDRESSES_DICT">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1348,30 +1283,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="164" column="0" lean-forward="true" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="119" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="84" column="63" lean-forward="false" selection-start-line="84" selection-start-column="63" selection-end-line="84" selection-end-column="63" />
+        <state relative-caret-position="850">
+          <caret line="63" column="27" lean-forward="false" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/models/Meeting.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="120" column="12" lean-forward="true" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
+        <state relative-caret-position="561">
+          <caret line="36" column="76" lean-forward="false" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
           <folding>
-            <element signature="e#3712#3713#0" expanded="true" />
-            <element signature="e#3770#3771#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="119" column="95" lean-forward="true" selection-start-line="119" selection-start-column="95" selection-end-line="119" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

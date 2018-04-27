@@ -15,18 +15,17 @@ class VNSOptimizer {
     private Route myCurrentBest = null;
 
 
-    private static int INITIAL_DISTANCE = 4;
-    private static int DISTANCE_STEP = 8;
+    private static int INITIAL_DISTANCE = 2;
+    private static int DISTANCE_STEP = 1;
 
     VNSOptimizer(DistanceHelper distanceHelper) {
         this.distanceHelper = distanceHelper;
         this.meetings = distanceHelper.getMeetings();
-
+        initialize();
     }
 
     void optimize() {
         try {
-            initialize();
             long start = System.currentTimeMillis();
             int i = 0;
             int lastSuccessIndex = 0;
@@ -85,7 +84,7 @@ class VNSOptimizer {
     }
 
 
-    private Route opt2(Route opt2ResultLocal) {
+    public Route opt2(Route opt2ResultLocal) {
         int distA;
         int distB;
         for (int i = 0; i < meetings.size() - 2; i++) {
@@ -108,7 +107,7 @@ class VNSOptimizer {
 
 
     synchronized Route getCurrentBest() {
-        currentBest.getRoute();
+        //currentBest.getRoute();
         return currentBest;
     }
 

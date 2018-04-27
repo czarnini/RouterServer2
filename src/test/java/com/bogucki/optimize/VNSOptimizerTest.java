@@ -2,25 +2,60 @@ package com.bogucki.optimize;
 
 import com.bogucki.databse.DistanceHelper;
 import com.bogucki.optimize.models.Meeting;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 public class VNSOptimizerTest {
 
-    @Test
-    public void foo() throws Exception {
-        long start = System.currentTimeMillis();
-        String[] addresses = new String[]{"janowskiego 13,warszawa", "wspólna 73,warszawa", "mielczarskiego 10,warszawa", "konduktorska 2,warszawa",
-                "komorska 29/33,warszawa", "herbsta 4,warszawa", "waszyngtona 12/14,warszawa", "świętokrzyska 31/33a,warszawa", "berensona 12b,warszawa",
-                "woronicza 50,warszawa", "zawiszy 5,warszawa", "kredytowa 5,warszawa", "al. ken 36,warszawa"};
-        ArrayList<Meeting> meetings = new ArrayList<>();
+    private String[] addresses;
+    private ArrayList<Meeting> meetings;
+    private DistanceHelper distanceHelper;
+    private VNSOptimizer optimizer;
+
+    @Before
+    public void setup() throws Exception {
+        addresses = new String[]{"wspólna 73,warszawa",
+                "mielczarskiego 10,warszawa",
+                "janowskiego 13,warszawa",
+                "konduktorska 2,warszawa",
+                "komorska 29, warszawa",
+                "herbsta 4, warszawa",
+                "świętokrzyska 31, warszawa",
+                "berensona 12b, warszawa"};
+        meetings = new ArrayList<>();
         for (String address : addresses) {
             meetings.add(new Meeting(address));
         }
-        VNSOptimizer optimizer = new VNSOptimizer(new DistanceHelper(meetings));
-        optimizer.optimize();
-        optimizer.getCurrentBest().getRoute();
+        distanceHelper = new DistanceHelper(meetings);
+        optimizer = new VNSOptimizer(distanceHelper);
+    }
 
+    @Test
+    public void testOpt2() throws Exception {
+        for (int i = 0; i < 10; i++) {
+            Route opt2 = optimizer.opt2(Route.getInitialRoute(meetings.size(), distanceHelper));
+
+            for (int j = 0; j < meetings.size(); j++) {
+                System.out.print(opt2.getCitiesOrder()[j]);
+            }
+            System.out.println();
+        }
+    }
+
+
+    @Test
+    public void testVNS() throws Exception {
+
+        for (int i = 0; i < 10; ++i) {
+            optimizer = new VNSOptimizer(new DistanceHelper(meetings));
+            optimizer.optimize();
+            for (int j = 0; j < meetings.size(); j++) {
+                System.out.print(optimizer.getCurrentBest().getCitiesOrder()[j]);
+            }
+            System.out.println();
+            VNSOptimizer.currentBest = null;
+        }
     }
 }

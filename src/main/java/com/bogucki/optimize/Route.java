@@ -75,10 +75,11 @@ public class Route {
     static Route newRandomRoute(int size, DistanceHelper helper) {
         Random generator = new Random();
         Route route = new Route(size, helper);
-        for (int i = 0; i < size; i++) {
+        route.setCity(0, 0);
+        for (int i = 1; i < size; i++) {
             int insertIndex;
             do {
-                insertIndex = generator.nextInt(size);
+                insertIndex = 1 + generator.nextInt(size - 1);
             } while (route.getCity(insertIndex) != -1);
             route.setCity(i, insertIndex); //insertIndex
         }
@@ -105,17 +106,18 @@ public class Route {
      */
     Route generateNeighbourRoute(int distance) {
         Route result = new Route(this);
-        for (int i = 0; i < distance-1; i++) {
+        result.setCity(0, 0);
+        for (int i = 1; i < distance - 1; i++) {
             int tmp = result.getCity(i);
-            result.setCity(getCity(i+1), i);
-            result.setCity(tmp, i+1);
+            result.setCity(getCity(i + 1), i);
+            result.setCity(tmp, i + 1);
         }
 
         for (int i = 0; i < distance; i++) {
             result.setCost(
                     result.getCost()
-                            - distanceHelper.getTime(citiesOrder[i],citiesOrder[i+1],9)
-                            + distanceHelper.getTime(result.getCity(i),result.getCity(i+1),9)
+                            - distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 9)
+                            + distanceHelper.getTime(result.getCity(i), result.getCity(i + 1), 9)
             );
 
         }
