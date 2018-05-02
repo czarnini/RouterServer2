@@ -5,6 +5,7 @@ import com.bogucki.databse.DistanceHelper;
 import com.bogucki.optimize.models.Meeting;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 class VNSOptimizer {
     private volatile ArrayList<Meeting> meetings;
@@ -51,7 +52,7 @@ class VNSOptimizer {
                 }
 
                 if (i - lastSuccessIndex > 10000) {
-                    myCurrentBest = Route.newRandomRoute(meetings.size(), distanceHelper);
+                    myCurrentBest = Route.newRandomRoute(distanceHelper);
                 }
 
                 if (i - lastSuccessIndex > 1000000) {
@@ -77,7 +78,7 @@ class VNSOptimizer {
     }
 
     private synchronized void initialize() {
-        myCurrentBest = Route.getInitialRoute(meetings.size(), distanceHelper);
+        myCurrentBest = Route.getInitialRoute(distanceHelper);
         if (null == currentBest) {
             currentBest = new Route(myCurrentBest);
         }
@@ -87,20 +88,26 @@ class VNSOptimizer {
     public Route opt2(Route opt2ResultLocal) {
         int distA;
         int distB;
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
         for (int i = 0; i < meetings.size() - 2; i++) {
             for (int j = i + 2; j < meetings.size() - 1; j++) {
 
-                int IthCity = opt2ResultLocal.getCity(i), IthPlusOneCity = opt2ResultLocal.getCity(i + 1),
-                        jThCity = opt2ResultLocal.getCity(j), jThPlusOneCity = opt2ResultLocal.getCity(j + 1);
+                int     IthCity = opt2ResultLocal.getCity(i),
+                        IthPlusOneCity = opt2ResultLocal.getCity(i + 1),
+
+                        jThCity = opt2ResultLocal.getCity(j),
+                        jThPlusOneCity = opt2ResultLocal.getCity(j + 1);
 
                 distA = distanceHelper.getTime(IthCity, IthPlusOneCity, 9) + distanceHelper.getTime(jThCity, jThPlusOneCity, 9);
                 distB = distanceHelper.getTime(IthCity, jThCity, 9) + distanceHelper.getTime(IthPlusOneCity, jThPlusOneCity, 9);
 
                 if (distA > distB) {
-                    opt2ResultLocal.swap(i + 1, j - 1);
+                    opt2ResultLocal.swap(i + 1, j);
                 }
             }
         }
+
 
         return opt2ResultLocal;
     }

@@ -7,6 +7,7 @@ import com.bogucki.optimize.models.Meeting;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Random;
 
 /**
@@ -45,8 +46,8 @@ public class Route {
 
 
     void swap(int i, int j) {
-        int result[] = new int[citiesOrder.length];
 
+        int result[] = new int[citiesOrder.length];
         for (int tmp = 0; tmp < result.length; tmp++) {
             if (tmp >= i && tmp <= j) {
                 result[tmp] = citiesOrder[j - (tmp - i)];
@@ -55,42 +56,53 @@ public class Route {
             }
         }
 
-        for (int tmp = i; tmp <= j + 1; tmp++) {
-            cost -= distanceHelper.getTime(getCity(tmp - 1), getCity(tmp), 9);
-            cost += distanceHelper.getTime(result[tmp - 1], result[tmp], 9);
+        for (int tmp = i-1; tmp <= j; tmp++){
+            if(tmp == result.length - 1){
+                break;
+            }
+            cost -= distanceHelper.getTime(getCity(tmp), getCity(tmp+1), 9);
+            cost += distanceHelper.getTime(result[tmp], result[tmp+1], 9);
         }
+
+
 
         citiesOrder = Arrays.copyOf(result, result.length);
     }
 
-    static Route getInitialRoute(int size, DistanceHelper helper) {
-        Route route = new Route(size, helper);
-        for (int i = 0; i < size; i++) {
+    static Route getInitialRoute(DistanceHelper helper) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+
+        Route route = new Route(helper.getMeetings().size(), helper);
+        for (int i = 0; i < helper.getMeetings().size(); i++) {
             route.setCity(i, i);
         }
-        route.countCost();
+        route.countCost(calendar.get(Calendar.HOUR_OF_DAY));
         return route;
     }
 
-    static Route newRandomRoute(int size, DistanceHelper helper) {
+    static Route newRandomRoute(DistanceHelper helper) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+
         Random generator = new Random();
-        Route route = new Route(size, helper);
+        Route route = new Route(helper.getMeetings().size(), helper);
         route.setCity(0, 0);
-        for (int i = 1; i < size; i++) {
+        for (int i = 1; i < helper.getMeetings().size(); i++) {
             int insertIndex;
             do {
-                insertIndex = 1 + generator.nextInt(size - 1);
+                insertIndex = 1 + generator.nextInt(helper.getMeetings().size() - 1);
             } while (route.getCity(insertIndex) != -1);
             route.setCity(i, insertIndex); //insertIndex
         }
-        route.countCost();
+        route.countCost(calendar.get(Calendar.HOUR_OF_DAY));
         return route;
     }
 
-    synchronized void countCost() {
+    synchronized void countCost(int hourOfStart) {
         int result = 0;
         for (int i = 0; i < citiesOrder.length - 1; i++) {
-            result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 9);
+            result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], hourOfStart + (result/3600) );
         }
         cost = result;
     }

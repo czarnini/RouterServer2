@@ -9,8 +9,14 @@ import java.util.ArrayList;
 
 public class RouteTest {
 
-    private String[] addresses = new String[]{"janowskiego 13,warszawa", "wspólna 73,warszawa",
-            "mielczarskiego 10,warszawa", "konduktorska 2,warszawa", "janowskiego 13,warszawa", "wspólna 73,warszawa"};
+    private String[] addresses = new String[]{"wspólna 73,warszawa",
+            "mielczarskiego 10,warszawa",
+            "janowskiego 13,warszawa",
+            "konduktorska 2,warszawa",
+            "komorska 29, warszawa",
+            "herbsta 4, warszawa",
+            "świętokrzyska 31, warszawa",
+            "berensona 12b, warszawa"};
     private ArrayList<Meeting> meetings = new ArrayList<>();
     private Route route;
 
@@ -19,16 +25,17 @@ public class RouteTest {
         for (String address : addresses) {
             meetings.add(new Meeting(address));
         }
-        route = Route.getInitialRoute(meetings.size(), new DistanceHelper(meetings));
+        route = Route.getInitialRoute(new DistanceHelper(meetings));
         route.getRoute();
 
     }
+
 
     @Test
     public void shouldSwapRouteBetweenFirstElementWithForth() throws Exception {
         int[] orderBeforeSwap = route.getCitiesOrder();
         int costBeforeSwap = route.getCost();
-        route.swap(1, 4);
+        route.swap(1, 2);
         int[] orderAfterSwap = route.getCitiesOrder();
         route.getRoute();
 

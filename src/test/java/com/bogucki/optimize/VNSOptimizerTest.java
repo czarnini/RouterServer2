@@ -34,14 +34,14 @@ public class VNSOptimizerTest {
 
     @Test
     public void testOpt2() throws Exception {
-        for (int i = 0; i < 10; i++) {
-            Route opt2 = optimizer.opt2(Route.getInitialRoute(meetings.size(), distanceHelper));
 
-            for (int j = 0; j < meetings.size(); j++) {
-                System.out.print(opt2.getCitiesOrder()[j]);
-            }
-            System.out.println();
+        Route opt2 = optimizer.opt2(Route.getInitialRoute(distanceHelper));
+
+        for (int j = 0; j < meetings.size(); j++) {
+            System.out.print(opt2.getCitiesOrder()[j]);
         }
+        System.out.println();
+
     }
 
 
