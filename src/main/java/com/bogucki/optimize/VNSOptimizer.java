@@ -30,7 +30,7 @@ class VNSOptimizer {
             long start = System.currentTimeMillis();
             int i = 0;
             int lastSuccessIndex = 0;
-            while (System.currentTimeMillis() - start < 5 * 1000) {
+            while (System.currentTimeMillis() - start < 50 * 1000) {
                 ++i;
                 int distance = INITIAL_DISTANCE;
                 int notFeasibleCount = 0;
@@ -85,7 +85,7 @@ class VNSOptimizer {
     }
 
 
-    public Route opt2(Route opt2ResultLocal) {
+    Route opt2(Route opt2ResultLocal) {
         int distA;
         int distB;
         Calendar calendar = Calendar.getInstance();
@@ -93,14 +93,16 @@ class VNSOptimizer {
         for (int i = 0; i < meetings.size() - 2; i++) {
             for (int j = i + 2; j < meetings.size() - 1; j++) {
 
-                int     IthCity = opt2ResultLocal.getCity(i),
-                        IthPlusOneCity = opt2ResultLocal.getCity(i + 1),
+                int IthCity = opt2ResultLocal.getCity(i);
+                int IthPlusOneCity = opt2ResultLocal.getCity(i + 1);
+                int jThCity = opt2ResultLocal.getCity(j);
+                int jThPlusOneCity = opt2ResultLocal.getCity(j + 1);
 
-                        jThCity = opt2ResultLocal.getCity(j),
-                        jThPlusOneCity = opt2ResultLocal.getCity(j + 1);
+                int timeOfStartFromIth = opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(i) / 3600;
+                int timeOfStartFromJth = opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(j) / 3600;
 
-                distA = distanceHelper.getTime(IthCity, IthPlusOneCity, 9) + distanceHelper.getTime(jThCity, jThPlusOneCity, 9);
-                distB = distanceHelper.getTime(IthCity, jThCity, 9) + distanceHelper.getTime(IthPlusOneCity, jThPlusOneCity, 9);
+                distA = distanceHelper.getTime(IthCity, IthPlusOneCity, timeOfStartFromIth) + distanceHelper.getTime(jThCity, jThPlusOneCity, timeOfStartFromJth);
+                distB = distanceHelper.getTime(IthCity, jThCity, timeOfStartFromIth) + distanceHelper.getTime(IthPlusOneCity, jThPlusOneCity, timeOfStartFromJth);
 
                 if (distA > distB) {
                     opt2ResultLocal.swap(i + 1, j);

@@ -8,5 +8,12 @@
       <auth-required>false</auth-required>
       <introspection-schemas>*:main</introspection-schemas>
     </data-source>
+    <data-source name="Berlin52Distances.db" uuid="85570508-61f8-4a08-8c45-de4e8b5db010">
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <auth-required>false</auth-required>
+      <introspection-schemas>*:main</introspection-schemas>
+    </data-source>
   </component>
 </project>

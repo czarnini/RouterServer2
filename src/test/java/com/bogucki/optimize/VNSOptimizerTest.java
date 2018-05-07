@@ -16,14 +16,10 @@ public class VNSOptimizerTest {
 
     @Before
     public void setup() throws Exception {
-        addresses = new String[]{"wspólna 73,warszawa",
-                "mielczarskiego 10,warszawa",
-                "janowskiego 13,warszawa",
-                "konduktorska 2,warszawa",
-                "komorska 29, warszawa",
-                "herbsta 4, warszawa",
-                "świętokrzyska 31, warszawa",
-                "berensona 12b, warszawa"};
+        addresses = new String[52];
+        for (int i = 0; i < 52 ; i++) {
+            addresses[i] = String.valueOf(i+1);
+        }
         meetings = new ArrayList<>();
         for (String address : addresses) {
             meetings.add(new Meeting(address));
@@ -48,13 +44,13 @@ public class VNSOptimizerTest {
     @Test
     public void testVNS() throws Exception {
 
-        for (int i = 0; i < 10; ++i) {
+        for (int i = 0; i < 1; ++i) {
             optimizer = new VNSOptimizer(new DistanceHelper(meetings));
             optimizer.optimize();
             for (int j = 0; j < meetings.size(); j++) {
-                System.out.print(optimizer.getCurrentBest().getCitiesOrder()[j]);
+                System.out.print(optimizer.getCurrentBest().getCitiesOrder()[j]+ ", ");
             }
-            System.out.println();
+            System.out.println("\n"+optimizer.getCurrentBest().getCost());
             VNSOptimizer.currentBest = null;
         }
     }

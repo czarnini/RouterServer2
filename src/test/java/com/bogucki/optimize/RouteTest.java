@@ -35,7 +35,7 @@ public class RouteTest {
     public void shouldSwapRouteBetweenFirstElementWithForth() throws Exception {
         int[] orderBeforeSwap = route.getCitiesOrder();
         int costBeforeSwap = route.getCost();
-        route.swap(1, 2);
+        route.swap(2, 5);
         int[] orderAfterSwap = route.getCitiesOrder();
         route.getRoute();
 

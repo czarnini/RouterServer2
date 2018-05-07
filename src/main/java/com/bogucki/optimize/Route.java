@@ -15,21 +15,33 @@ import java.util.Random;
  */
 public class Route {
     private int[] citiesOrder;
+    private int[] costVector;
+    private int hourOfStart;
     private DistanceHelper distanceHelper;
     private int cost;
     private boolean feasible;
-
     private Route(int routeLength, DistanceHelper helper) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+
         citiesOrder = new int[routeLength];
+        costVector = new int[routeLength];
         distanceHelper = helper;
         Arrays.fill(citiesOrder, -1);
+        Arrays.fill(costVector, -1);
+        hourOfStart = calendar.get(Calendar.HOUR_OF_DAY);
     }
 
 
     Route(Route baseRoute) {
         this.citiesOrder = baseRoute.getCitiesOrder().clone();
+        this.costVector = baseRoute.getCostVector().clone();
         this.distanceHelper = baseRoute.distanceHelper;
         this.cost = baseRoute.cost;
+    }
+
+    public int getHourOfStart() {
+        return hourOfStart;
     }
 
     public int getCity(int index) {
@@ -44,6 +56,17 @@ public class Route {
         return citiesOrder;
     }
 
+    public int[] getCostVector() {
+        return costVector;
+    }
+
+    public void setCostVector(int[] costVector) {
+        this.costVector = costVector;
+    }
+
+    public int getCostAt(int city){
+        return costVector[city];
+    }
 
     void swap(int i, int j) {
 
@@ -63,21 +86,20 @@ public class Route {
             cost -= distanceHelper.getTime(getCity(tmp), getCity(tmp+1), 9);
             cost += distanceHelper.getTime(result[tmp], result[tmp+1], 9);
         }
-
-
-
         citiesOrder = Arrays.copyOf(result, result.length);
+        countCostVector();
+
     }
 
     static Route getInitialRoute(DistanceHelper helper) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
+
 
         Route route = new Route(helper.getMeetings().size(), helper);
         for (int i = 0; i < helper.getMeetings().size(); i++) {
             route.setCity(i, i);
         }
-        route.countCost(calendar.get(Calendar.HOUR_OF_DAY));
+        route.countCost();
+        route.countCostVector();
         return route;
     }
 
@@ -95,16 +117,27 @@ public class Route {
             } while (route.getCity(insertIndex) != -1);
             route.setCity(i, insertIndex); //insertIndex
         }
-        route.countCost(calendar.get(Calendar.HOUR_OF_DAY));
+        route.countCost();
+        route.countCostVector();
+
         return route;
     }
 
-    synchronized void countCost(int hourOfStart) {
+    synchronized void countCost() {
         int result = 0;
         for (int i = 0; i < citiesOrder.length - 1; i++) {
             result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], hourOfStart + (result/3600) );
         }
         cost = result;
+    }
+
+    synchronized void countCostVector() {
+        int result = 0;
+        for (int i = 0; i < citiesOrder.length - 1; i++) {
+            costVector[i] = result;
+            result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], hourOfStart + (result/3600) );
+        }
+        costVector[citiesOrder.length-1] = result;
     }
 
     public int getCost() {
@@ -150,13 +183,12 @@ public class Route {
     public void getRoute() {
         try {
             int currentTime = 0;
-            for (int i = 0; i < citiesOrder.length - 1; i++) {
-                int index = citiesOrder[i];
-                System.out.println(distanceHelper.getMeetings().get(index).getAddress() + " ETA: " + currentTime);
-                currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 9);
+            for (int i = 0; i < citiesOrder.length; i++) {
+                int iThCity = citiesOrder[i];
+                int hour = costVector[i]/3600;
+                int minute = (costVector[i] - hour*3600)/60;
+                System.out.println(String.format("%1$-"+40+"s", distanceHelper.getMeetings().get(iThCity).getAddress()) +"\t("+ getCostAt(i) +")\tETA: " + String.format ("%02d:%02d",hourOfStart +hour, minute ));
             }
-            System.out.println(distanceHelper.getMeetings().get(citiesOrder.length - 1).getAddress() + " ETA: " + currentTime);
-
 
             System.out.println("\n\n");
         } catch (Exception e) {

@@ -11,13 +11,13 @@ import java.util.List;
 
 public class DistanceHelper {
 
-    private static final String ADDRESSES_DICT = "ADDRESSES_DICT";
-    private final ArrayList<Meeting> meetings;
-    private Connection c;
+    static final String ADDRESSES_DICT = "ADDRESSES_DICT";
+    ArrayList<Meeting> meetings;
+    Connection c;
 
 
-    private volatile List<Integer> addressesIds;
-    private volatile HashMap<Integer, HashMap<Integer, HashMap<Integer, Integer>>> costs;
+    volatile List<Integer> addressesIds;
+    volatile HashMap<Integer, HashMap<Integer, HashMap<Integer, Integer>>> costs;
 
     public void createAddressDictionary() {
         try {
@@ -37,7 +37,7 @@ public class DistanceHelper {
     }
 
 
-    private String generateHoursColumns() {
+    String generateHoursColumns() {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < 24; i++) {
             builder.append("C").append(i).append(" INT NOT NULL ");
@@ -48,10 +48,14 @@ public class DistanceHelper {
         return builder.toString();
     }
 
+    DistanceHelper() {
+        meetings = null;
+    }
+
     public DistanceHelper(ArrayList<Meeting> meetings) {
         this.meetings = meetings;
         try {
-            String databaseUrl = "jdbc:sqlite:Distances.db";
+            String databaseUrl = "jdbc:sqlite:Berlin52Distances.db";
             c = DriverManager.getConnection(databaseUrl);
             loadDistancesToRAM();
         } catch (SQLException e) {
@@ -60,7 +64,7 @@ public class DistanceHelper {
     }
 
 
-    private void loadDistancesToRAM() {
+    void loadDistancesToRAM() {
         if (null == meetings) {
             return;
         }
@@ -118,7 +122,7 @@ public class DistanceHelper {
     }
 
 
-    private HashMap<Integer, HashMap<Integer, Integer>> loadTimesFromAddress(int originID) throws SQLException {
+    HashMap<Integer, HashMap<Integer, Integer>> loadTimesFromAddress(int originID) throws SQLException {
 
         HashMap<Integer, HashMap<Integer, Integer>> result = new HashMap<>();
         String query = " SELECT dest_id, C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15,C16,C17,C18,C19,C20,C21,C22,C23 " +
@@ -166,7 +170,7 @@ public class DistanceHelper {
         return id;
     }
 
-    private int addAddressToDict(String address) throws SQLException {
+    int addAddressToDict(String address) throws SQLException {
         StringBuilder query = new StringBuilder("INSERT INTO " + ADDRESSES_DICT)
                 .append("(ADDRESS) VALUES ('")
                 .append(address)
@@ -180,7 +184,7 @@ public class DistanceHelper {
         return id;
     }
 
-    private void createAddressTable(int originId, ArrayList<Integer> timesFromNewAddress) throws SQLException {
+    void createAddressTable(int originId, ArrayList<Integer> timesFromNewAddress) throws SQLException {
         String query = "CREATE TABLE A" +
                 originId +
                 " (" +
@@ -196,7 +200,7 @@ public class DistanceHelper {
         }
     }
 
-    private void insertTimes(int originId, int destinationId, ArrayList<Integer> times) throws SQLException {
+    void insertTimes(int originId, int destinationId, ArrayList<Integer> times) throws SQLException {
         if (originId == destinationId && destinationId == 1) {
             return;
         }
