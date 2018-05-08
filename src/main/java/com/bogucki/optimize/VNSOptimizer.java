@@ -16,7 +16,7 @@ class VNSOptimizer {
     private Route myCurrentBest = null;
 
 
-    private static int INITIAL_DISTANCE = 2;
+    private static int INITIAL_DISTANCE = 1;
     private static int DISTANCE_STEP = 1;
 
     VNSOptimizer(DistanceHelper distanceHelper) {
@@ -29,8 +29,8 @@ class VNSOptimizer {
         try {
             long start = System.currentTimeMillis();
             int i = 0;
-            int lastSuccessIndex = 0;
-            while (System.currentTimeMillis() - start < 50 * 1000) {
+            long lastSuccessIndex = System.currentTimeMillis();
+            while (System.currentTimeMillis() - start < 30 * 1000) {
                 ++i;
                 int distance = INITIAL_DISTANCE;
                 int notFeasibleCount = 0;
@@ -39,7 +39,7 @@ class VNSOptimizer {
                     if (opt2Result.isFeasible()) {
                         if (isBetterRouteFound(opt2Result)) {
                             distance = INITIAL_DISTANCE;
-                            lastSuccessIndex = i;
+                            lastSuccessIndex = System.currentTimeMillis();
                         } else {
                             distance += DISTANCE_STEP;
                         }
@@ -51,11 +51,11 @@ class VNSOptimizer {
                     }
                 }
 
-                if (i - lastSuccessIndex > 10000) {
-                    myCurrentBest = Route.newRandomRoute(distanceHelper);
-                }
+                myCurrentBest = Route.newRandomRoute(distanceHelper);
 
-                if (i - lastSuccessIndex > 1000000) {
+
+                if (System.currentTimeMillis() - lastSuccessIndex > 10000) {
+                    System.out.println("BREAKMADAFAKA");
                     break;
                 }
 
@@ -70,7 +70,7 @@ class VNSOptimizer {
         if ((opt2Result.getCost() >= currentBest.getCost())) {
             return false;
         } else {
-            System.out.println(Thread.currentThread().getName() + "new best found! " + String.format("%.2f", opt2Result.getCost() / 3600.0));
+            System.out.println(Thread.currentThread().getName() + "new best found! " + String.format("%.2f", opt2Result.getCost() / 1.0));
             currentBest = new Route(opt2Result);
             myCurrentBest = new Route(currentBest);
             return true;
@@ -90,27 +90,33 @@ class VNSOptimizer {
         int distB;
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
-        for (int i = 0; i < meetings.size() - 2; i++) {
-            for (int j = i + 2; j < meetings.size() - 1; j++) {
 
-                int IthCity = opt2ResultLocal.getCity(i);
-                int IthPlusOneCity = opt2ResultLocal.getCity(i + 1);
-                int jThCity = opt2ResultLocal.getCity(j);
-                int jThPlusOneCity = opt2ResultLocal.getCity(j + 1);
+        int prevCost = Integer.MAX_VALUE;
+        while (opt2ResultLocal.getCost() < prevCost) {
+            for (int i = 0; i < meetings.size() - 2; i++) {
+                for (int j = i + 2; j < meetings.size() - 1; j++) {
+                    prevCost = opt2ResultLocal.getCost();
+                    int IthCity = opt2ResultLocal.getCity(i);
+                    int IthPlusOneCity = opt2ResultLocal.getCity(i + 1);
+                    int jThCity = opt2ResultLocal.getCity(j);
+                    int jThPlusOneCity = opt2ResultLocal.getCity(j + 1);
 
-                int timeOfStartFromIth = opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(i) / 3600;
-                int timeOfStartFromJth = opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(j) / 3600;
+                    int timeOfStartFromIth = opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(i) / 3600;
+                    int timeOfStartFromJth = opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(j) / 3600;
 
-                distA = distanceHelper.getTime(IthCity, IthPlusOneCity, timeOfStartFromIth) + distanceHelper.getTime(jThCity, jThPlusOneCity, timeOfStartFromJth);
-                distB = distanceHelper.getTime(IthCity, jThCity, timeOfStartFromIth) + distanceHelper.getTime(IthPlusOneCity, jThPlusOneCity, timeOfStartFromJth);
+                    distA = distanceHelper.getTime(IthCity, IthPlusOneCity, timeOfStartFromIth) + distanceHelper.getTime(jThCity, jThPlusOneCity, timeOfStartFromJth);
+                    distB = distanceHelper.getTime(IthCity, jThCity, timeOfStartFromIth) + distanceHelper.getTime(IthPlusOneCity, jThPlusOneCity, timeOfStartFromJth);
 
-                if (distA > distB) {
-                    opt2ResultLocal.swap(i + 1, j);
+                    if (distA > distB) {
+                        opt2ResultLocal.swap(i + 1, j);
+                    }
+
                 }
             }
+
         }
 
-
+        opt2ResultLocal.countCostVector();
         return opt2ResultLocal;
     }
 
@@ -120,4 +126,13 @@ class VNSOptimizer {
         return currentBest;
     }
 
+    public static Route recalculate(DistanceHelper distanceHelper) {
+        System.out.println("Updating");
+        Route route = Route.getInitialRoute(distanceHelper);
+        route.countCost();
+        route.getRoute();
+
+        return  route;
+
+    }
 }

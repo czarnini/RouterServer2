@@ -13,14 +13,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class OptimizationManager implements Runnable {
-    private Route result;
-    private DatabaseReference routeToOptimize;
-    private DistanceHelper distanceHelper;
+public class OptimizationManager implements Runnable  {
+    onRequestDoneListener listener;
+    Route result;
+    DatabaseReference routeToOptimize;
+    DistanceHelper distanceHelper;
 
-    public OptimizationManager(DatabaseReference routeToOptimize) {
+    public OptimizationManager(DatabaseReference routeToOptimize, onRequestDoneListener listener) {
         System.out.println(routeToOptimize.getRef());
         this.routeToOptimize = routeToOptimize;
+        this.listener = listener;
+    }
+
+    public OptimizationManager() {
+
     }
 
     @Override
@@ -76,7 +82,7 @@ public class OptimizationManager implements Runnable {
 
     }
 
-    private void publishOptimalRoute() {
+    void publishOptimalRoute() {
         long currentTime = System.currentTimeMillis();
         Map<String, Object> valuesToSend = new HashMap<>();
         int[] order = result.getCitiesOrder();
@@ -91,10 +97,11 @@ public class OptimizationManager implements Runnable {
         distanceHelper.getMeetings().get(order[order.length-1]).setPlanedTimeOfVisit(currentTime);
         valuesToSend.put(distanceHelper.getMeetings().get(order[order.length-1]).getPushId(), distanceHelper.getMeetings().get(order[order.length-1]).toMap());
 
-        routeToOptimize.updateChildren(valuesToSend, this::cleanUpRequest);
+        routeToOptimize.updateChildren(valuesToSend, listener);
     }
 
-    private void cleanUpRequest(DatabaseError error, DatabaseReference ref) {
+/*    @Override
+    public void onRequestDone() {
         FirebaseDatabase.getInstance().getReference().child("requests").child(routeToOptimize.getKey()).removeValueAsync();
-    }
+    }*/
 }

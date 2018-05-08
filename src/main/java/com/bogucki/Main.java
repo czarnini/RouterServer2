@@ -1,8 +1,8 @@
 package com.bogucki;
 
 import com.bogucki.databse.DistanceHelper;
-import com.bogucki.optimize.models.Client;
 import com.bogucki.optimize.OptimizationManager;
+import com.bogucki.optimize.RouteUpdater;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -22,6 +22,7 @@ public class Main {
         routerDataBase = FirebaseDatabase.getInstance().getReference();
         handleOptimizeRequest();
         handleNewClient();
+        handleRecalculating();
         keepAlive();
     }
 
@@ -38,9 +39,9 @@ public class Main {
             @Override
             public void onChildAdded(DataSnapshot snapshot, String previousChildName) {
                 try {
-                    Client client = snapshot.getValue(Client.class);
-                    DistanceHelper distanceHelper = new DistanceHelper(null);
-                    distanceHelper.addAddressToDb(client.getAddress());
+//                    Client client = snapshot.getValue(Client.class);
+//                    DistanceHelper distanceHelper = new DistanceHelper(null);
+//                    distanceHelper.addAddressToDb(client.getAddress());
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -68,6 +69,53 @@ public class Main {
         });
     }
 
+    private static void handleRecalculating() {
+        routerDataBase.child("update").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot snapshot, String previousChildName) {
+                try {
+                    DatabaseReference routeToUpdate = FirebaseDatabase
+                            .getInstance()
+                            .getReference()
+                            .child("meetings")
+                            .child(snapshot.getKey());
+
+                    new Thread(new RouteUpdater(routeToUpdate, (error, ref) -> {
+                            System.out.println("Deleting update request");
+                            FirebaseDatabase.getInstance().getReference().child("update").child(routeToUpdate.getKey()).removeValueAsync();
+                    })
+
+
+                    ).start();
+
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot snapshot, String previousChildName) {
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot snapshot) {
+                System.out.println(snapshot.getKey() + " finished");
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot snapshot, String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
+    }
+
+
     private static void handleOptimizeRequest() {
         routerDataBase.child("requests").addChildEventListener(new ChildEventListener() {
             @Override
@@ -78,7 +126,7 @@ public class Main {
                         .child("meetings")
                         .child(snapshot.getKey());
 
-                new Thread(new OptimizationManager(routeToOptimize)).start();
+                new Thread(new OptimizationManager(routeToOptimize, (error, ref) -> FirebaseDatabase.getInstance().getReference().child("requests").child(routeToOptimize.getKey()).removeValueAsync())).start();
             }
 
             @Override

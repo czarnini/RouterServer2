@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b14f0ed-e364-4f3f-94b9-6449ea8edda7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Berlin52Distances.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/databse/Berlin52DistanceHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/databse/berlin52.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/bogucki/databse/Berlin52DistanceHelperTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/databse/DistanceHelper.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/databse/DistanceHelper.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/databse/b52.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/RouteUpdater.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/onRequestDoneListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Berlin52Distances.db" afterPath="$PROJECT_DIR$/Berlin52Distances.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/Main$1.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/Main$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/Main.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/Route.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/Route.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/VNSOptimizer.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/VNSOptimizer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/databse/DistanceHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/databse/DistanceHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/databse/berlin52.txt" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/databse/berlin52.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/bogucki/databse/Berlin52DistanceHelperTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/bogucki/databse/Berlin52DistanceHelperTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,6 +52,15 @@
         <item name="Berlin52Distances.db" type="e3449647:DbNodeDescriptor" />
         <item name="main" type="e3449647:DbNodeDescriptor" />
       </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="Distances.db" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="Distances.db" type="e3449647:DbNodeDescriptor" />
+        <item name="main" type="e3449647:DbNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
@@ -64,91 +74,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VNSOptimizer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VNSOptimizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="32" column="58" lean-forward="false" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
+            <state relative-caret-position="286">
+              <caret line="132" column="25" lean-forward="true" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DistanceHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/databse/DistanceHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-              <folding>
-                <element signature="method#generateHoursColumns#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="e#1527#1528#0" expanded="true" />
-                <element signature="e#1558#1559#0" expanded="true" />
-                <element signature="method#cleanUp#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="docComment;method#getTime#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="method#getTime#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="docComment;method#addAddress#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="method#addAddress#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="method#addAddressToDict#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="method#createAddressTable#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="method#insertTimes#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="method#getAllAddresses#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="method#mapAddressToID#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="method#getAddressID#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="method#addAddresses#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="method#addAddressToDb#0;class#DistanceHelper#0" expanded="false" />
-                <element signature="method#generateTimeDistribution#0;class#DistanceHelper#0" expanded="false" />
-                <marker date="1525681875889" expanded="true" signature="3624:3867" ph="SELECT dest_... AmissingValue" />
-                <marker date="1525681875889" expanded="false" signature="5800:5970" ph="CREATE TABLE... AmissingValue" />
-                <marker date="1525681875889" expanded="false" signature="6545:6868" ph="INSERT INTO AmissingValue... " />
-                <marker date="1525681875889" expanded="false" signature="7126:7167" ph="SELECT ADDRE... ADDRESSES_DICT" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VNSOptimizerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="berlin52.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/databse/berlin52.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ADDRESSES_DICT" pinned="false" current-in-tab="false">
-        <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="A53" pinned="false" current-in-tab="false">
-        <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A53">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="A52" pinned="false" current-in-tab="false">
-        <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A52">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -156,9 +87,71 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="49" />
+            <state relative-caret-position="168">
+              <caret line="82" column="40" lean-forward="false" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+              <folding>
+                <element signature="method#main#0;class#Main#0" expanded="false" />
+                <element signature="method#handleDistanceHelper#0;class#Main#0" expanded="false" />
+                <element signature="method#handleNewClient#0;class#Main#0" expanded="false" />
+                <element signature="class#1161:2184" expanded="false" />
+                <element signature="method#onChildAdded#0;class#1161:2184" expanded="false" />
+                <element signature="e#1316#1386#0" expanded="false" />
+                <element signature="method#onChildChanged#0;class#1161:2184" expanded="false" />
+                <element signature="method#onChildMoved#0;class#1161:2184" expanded="false" />
+                <element signature="method#onCancelled#0;class#1161:2184" expanded="false" />
+                <element signature="method#onChildChanged#0;class#2307:3719" expanded="false" />
+                <element signature="method#onChildMoved#0;class#2307:3719" expanded="false" />
+                <element signature="method#onCancelled#0;class#2307:3719" expanded="false" />
+                <element signature="method#onChildChanged#0;class#3847:4976" expanded="false" />
+                <element signature="method#onChildMoved#0;class#3847:4976" expanded="false" />
+                <element signature="method#onCancelled#0;class#3847:4976" expanded="false" />
+                <element signature="method#initFireBase#0;class#Main#0" expanded="false" />
+                <element signature="method#keepAlive#0;class#Main#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RouteUpdater.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/RouteUpdater.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OptimizationManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Route.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="215" column="27" lean-forward="true" selection-start-line="215" selection-start-column="27" selection-end-line="215" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="onRequestDoneListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/onRequestDoneListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -169,30 +162,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>INITIAL</find>
-      <find>init</find>
-      <find>initial</find>
-      <find>getCost</find>
-      <find>final</find>
-      <find>COST:</find>
-      <find>-----</find>
-      <find>opt</find>
-      <find>initia</find>
-      <find>get</find>
-      <find>meetings</find>
-      <find>getCi</find>
-      <find>swa</find>
-      <find>Done&quot;</find>
       <find>ul. ch. botewa 1</find>
       <find>herbsta 4</find>
-      <find>getRoute</find>
       <find>plan</find>
       <find>wspólna</find>
       <find>getTime</find>
@@ -206,6 +185,21 @@
       <find>toDb</find>
       <find>loadD</find>
       <find>load</find>
+      <find>.0</find>
+      <find>ETA</find>
+      <find>0</find>
+      <find>route.setCity(1</find>
+      <find>0,</find>
+      <find>initia</find>
+      <find>getRou</find>
+      <find>hejka</find>
+      <find>countCos</find>
+      <find>neigh</find>
+      <find>new bes</find>
+      <find>OptimizationManager</find>
+      <find>updating</find>
+      <find>/dir</find>
+      <find>getRoute</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -515,19 +509,25 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8fecd06c-335f-4ff0-94c1-f0bb004aa258/console.sql" />
         <option value="$PROJECT_DIR$/okhttp-3.9.1.jar!/okhttp3/Response.class" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/MapsAPI/GoogleMaps.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Meeting2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Handler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/models/Meeting.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/mockDatabase/DistanceHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/databse/Berlin52DistanceHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/databse/berlin52.txt" />
         <option value="$PROJECT_DIR$/src/test/java/com/bogucki/databse/Berlin52DistanceHelperTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/databse/DistanceHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/a.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/foo.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/onRequestDoneListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/RouteUpdater.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bogucki/databse/b52.js" />
       </list>
     </option>
   </component>
@@ -537,11 +537,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="-131" />
-    <option name="y" value="-18" />
-    <option name="width" value="1481" />
-    <option name="height" value="986" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-443" />
+    <option name="y" value="-16" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -601,6 +601,15 @@
               <item name="bogucki" type="462c0819:PsiDirectoryNode" />
               <item name="databse" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="bogucki" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bogucki" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bogucki" type="462c0819:PsiDirectoryNode" />
+              <item name="optimize" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -620,7 +629,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Berlin52Distances.db" />
-    <property name="SearchEverywhereHistoryKey" value="Vns&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java&#10;Main&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/Main.java&#10;Dist&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/databse/DistanceHelper.java&#10;rOUTE&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/RouteTest.java&#10;vns&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java&#10;Vn&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java&#10;RouteT&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/RouteTest.java&#10;VNS&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/VNSOptimizer.java&#10;newRan&#9;PSI&#9;JAVA://com.bogucki.optimize.Route#newRandomRoute&#10;Cli&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/Client.java&#10;Mee&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/Meeting2.java" />
+    <property name="SearchEverywhereHistoryKey" value="Main&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/Main.java&#10;Dis&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/databse/DistanceHelper.java&#10;Route&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/Route.java&#10;Vns&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java&#10;Dist&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/databse/DistanceHelper.java&#10;rOUTE&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/RouteTest.java&#10;vns&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java&#10;Vn&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java&#10;RouteT&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/test/java/com/bogucki/optimize/RouteTest.java&#10;VNS&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/VNSOptimizer.java&#10;newRan&#9;PSI&#9;JAVA://com.bogucki.optimize.Route#newRandomRoute&#10;Cli&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/Client.java&#10;Mee&#9;FILE&#9;file://C:/Users/boguc/IdeaProjects/bogucki/src/main/java/com/bogucki/optimize/Meeting2.java" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
   </component>
   <component name="RecentsManager">
@@ -657,7 +666,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VNSOptimizerTest.testVNS">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Berlin52DistanceHelperTest.shouldCreateDatabaseWithB52Distances" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -866,9 +875,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.VNSOptimizerTest.testVNS" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.Berlin52DistanceHelperTest.shouldCreateDatabaseWithB52Distances" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.VNSOptimizerTest.testVNS" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.Berlin52DistanceHelperTest.shouldCreateDatabaseWithB52Distances" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.RouteTest.shouldSwapRouteBetweenFirstElementWithForth" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.VNSOptimizerTest.testOpt2" />
       </list>
@@ -904,7 +913,7 @@
       <workItem from="1525277533324" duration="11022000" />
       <workItem from="1525330930050" duration="3742000" />
       <workItem from="1525458857299" duration="4552000" />
-      <workItem from="1525666943762" duration="7061000" />
+      <workItem from="1525666943762" duration="29147000" />
     </task>
     <task id="LOCAL-00001" summary="foo">
       <created>1524666564187</created>
@@ -927,46 +936,53 @@
       <option name="project" value="LOCAL" />
       <updated>1525293289422</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added berlin 52 dataset">
+      <created>1525682627917</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1525682627917</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Berlin52DistanceHelperTest_shouldCreateDatabaseWithB52Distances - 2018.05.07 at 10h 23m 22s.xml">
-      <configuration name="Berlin52DistanceHelperTest.shouldCreateDatabaseWithB52Distances" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Berlin52DistanceHelperTest_shouldCreateDatabaseWithB52Distances - 2018.05.07 at 10h 24m 57s.xml">
-      <configuration name="Berlin52DistanceHelperTest.shouldCreateDatabaseWithB52Distances" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Berlin52DistanceHelperTest_shouldCreateDatabaseWithB52Distances - 2018.05.07 at 10h 26m 02s.xml">
-      <configuration name="Berlin52DistanceHelperTest.shouldCreateDatabaseWithB52Distances" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Berlin52DistanceHelperTest_shouldCreateDatabaseWithB52Distances - 2018.05.07 at 10h 28m 21s.xml">
-      <configuration name="Berlin52DistanceHelperTest.shouldCreateDatabaseWithB52Distances" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Berlin52DistanceHelperTest_shouldCreateDatabaseWithB52Distances - 2018.05.07 at 10h 31m 18s.xml">
-      <configuration name="Berlin52DistanceHelperTest.shouldCreateDatabaseWithB52Distances" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 10h 33m 19s.xml">
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 12h 28m 30s.xml">
       <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 10h 34m 14s.xml">
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 12h 39m 42s.xml">
       <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 10h 36m 30s.xml">
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 12h 40m 44s.xml">
       <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 10h 38m 00s.xml">
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 12h 41m 49s.xml">
       <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 10h 40m 52s.xml">
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 12h 43m 04s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 12h 43m 21s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 12h 45m 51s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 12h 48m 50s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 12h 49m 24s.xml">
+      <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="VNSOptimizerTest_testVNS - 2018.05.07 at 12h 49m 39s.xml">
       <configuration name="VNSOptimizerTest.testVNS" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106827000" />
+    <option name="totallyTimeSpent" value="128913000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -978,20 +994,20 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.414966" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="23" width="1920" height="1017" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41463414" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="23" width="1920" height="1017" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28419936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1296875" sideWeight="0.49204665" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2234375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.190625" sideWeight="0.48785228" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2234375" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847425" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15833333" sideWeight="0.50795335" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984451" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1296875" sideWeight="0.5121477" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4347826" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1010,26 +1026,27 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28802082" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2234375" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3984451" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984451" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47035956" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="23" width="1920" height="1017" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.414966" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="23" width="1920" height="1017" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28419936" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34040296" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18095239" sideWeight="0.49204665" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932934" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1296875" sideWeight="0.48785228" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847425" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15833333" sideWeight="0.50795335" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1296875" sideWeight="0.5121477" order="6" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1042,14 +1059,47 @@
     <MESSAGE value="foo" />
     <MESSAGE value="added fixed starting point" />
     <MESSAGE value="better swap" />
-    <option name="LAST_COMMIT_MESSAGE" value="better swap" />
+    <MESSAGE value="added berlin 52 dataset" />
+    <option name="LAST_COMMIT_MESSAGE" value="added berlin 52 dataset" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/bogucki/databse/Berlin52DistanceHelperTest.java</url>
+          <line>12</line>
+          <properties />
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bogucki/databse/Berlin52DistanceHelper.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java</url>
+          <line>143</line>
+          <properties />
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/RouteUpdater.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bogucki/Main.java</url>
+          <line>84</line>
+          <properties />
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="117" />
+      <option name="time" value="147" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1058,201 +1108,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A69">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A65">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/okhttp-3.9.1.jar!/okhttp3/Response.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A86">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/MapsAPI/GoogleMaps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="72" column="64" lean-forward="false" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/DataReadListener.java" />
-    <entry file="uml://JAVA/com.bogucki.optimize.VNSOptimizer">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>com.bogucki.optimize.VNSOptimizer</OriginalElement>
-          <nodes>
-            <node x="" y="">com.bogucki.optimize.VNSOptimizer</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="61.0" y="15.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Meeting2.java" />
-    <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A2">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="554" column="13" lean-forward="false" selection-start-line="554" selection-start-column="13" selection-end-line="554" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Handler.java" />
-    <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A101">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/models/Meeting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="85" column="31" lean-forward="false" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.A100">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.ADDRESSES_DICT">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="47" column="66" lean-forward="false" selection-start-line="47" selection-start-column="66" selection-end-line="47" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/RouteTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="39" column="21" lean-forward="false" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/mockDatabase/DistanceHelper.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/85570508-61f8-4a08-8c45-de4e8b5db010/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A4">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A0">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A12">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A31">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A5">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A3">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1302,57 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/databse/Berlin52DistanceHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="85" column="43" lean-forward="false" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1525681432048" expanded="true" signature="2252:2422" ph="CREATE TABLE... AmissingValue" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A2">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A1">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/databse/Berlin52DistanceHelperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1368,13 +1172,6 @@
       </provider>
     </entry>
     <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A52">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -1388,37 +1185,167 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/databse/DistanceHelper.java">
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/databse/Berlin52DistanceHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        <state relative-caret-position="394">
+          <caret line="71" column="20" lean-forward="false" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
           <folding>
-            <element signature="method#generateHoursColumns#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="e#1527#1528#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-            <element signature="method#cleanUp#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="docComment;method#getTime#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="method#getTime#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="docComment;method#addAddress#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="method#addAddress#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="method#addAddressToDict#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="method#createAddressTable#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="method#insertTimes#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="method#getAllAddresses#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="method#mapAddressToID#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="method#getAddressID#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="method#addAddresses#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="method#addAddressToDb#0;class#DistanceHelper#0" expanded="false" />
-            <element signature="method#generateTimeDistribution#0;class#DistanceHelper#0" expanded="false" />
-            <marker date="1525681875889" expanded="true" signature="3624:3867" ph="SELECT dest_... AmissingValue" />
-            <marker date="1525681875889" expanded="false" signature="5800:5970" ph="CREATE TABLE... AmissingValue" />
-            <marker date="1525681875889" expanded="false" signature="6545:6868" ph="INSERT INTO AmissingValue... " />
-            <marker date="1525681875889" expanded="false" signature="7126:7167" ph="SELECT ADDRE... ADDRESSES_DICT" />
+            <element signature="imports" expanded="true" />
+            <marker date="1525681432048" expanded="true" signature="2252:2422" ph="CREATE TABLE... AmissingValue" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/databse/Berlin52DistanceHelperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/databse/berlin52.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="11" lean-forward="false" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A2">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/8fecd06c-335f-4ff0-94c1-f0bb004aa258/main.ADDRESSES_DICT">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A11">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A52">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A47">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A13">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A14">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/e1220fe8/85570508-61f8-4a08-8c45-de4e8b5db010/main.A1">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/a.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1428,17 +1355,185 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+        <state relative-caret-position="248">
+          <caret line="50" column="51" lean-forward="false" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/models/Meeting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="e#1953#1954#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/databse/DistanceHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="240" column="0" lean-forward="false" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
+          <folding>
+            <element signature="method#generateHoursColumns#0;class#DistanceHelper#0" expanded="false" />
+            <element signature="method#cleanUp#0;class#DistanceHelper#0" expanded="false" />
+            <element signature="docComment;method#getTime#0;class#DistanceHelper#0" expanded="false" />
+            <element signature="docComment;method#addAddress#0;class#DistanceHelper#0" expanded="false" />
+            <element signature="method#addAddressToDict#0;class#DistanceHelper#0" expanded="false" />
+            <element signature="method#createAddressTable#0;class#DistanceHelper#0" expanded="false" />
+            <element signature="method#getAllAddresses#0;class#DistanceHelper#0" expanded="false" />
+            <element signature="method#getAddressID#0;class#DistanceHelper#0" expanded="false" />
+            <element signature="method#addAddresses#0;class#DistanceHelper#0" expanded="false" />
+            <element signature="method#addAddressToDb#0;class#DistanceHelper#0" expanded="false" />
+            <element signature="method#generateTimeDistribution#0;class#DistanceHelper#0" expanded="false" />
+            <marker date="1525683462605" expanded="true" signature="3624:3867" ph="SELECT dest_... AmissingValue" />
+            <marker date="1525683462605" expanded="false" signature="5800:5970" ph="CREATE TABLE... AmissingValue" />
+            <marker date="1525683462605" expanded="false" signature="6545:6868" ph="INSERT INTO AmissingValue... " />
+            <marker date="1525683462605" expanded="false" signature="7126:7167" ph="SELECT ADDRE... ADDRESSES_DICT" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/foo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="254" column="39" lean-forward="true" selection-start-line="254" selection-start-column="39" selection-end-line="254" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-admin/5.8.0/fe52ed20fe5b9273e219684ba68714592c1d4163/firebase-admin-5.8.0-sources.jar!/com/google/firebase/database/core/view/EventRaiser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="e#1776#2069#0" expanded="false" />
+            <element signature="e#2068#2069#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-admin/5.8.0/fe52ed20fe5b9273e219684ba68714592c1d4163/firebase-admin-5.8.0-sources.jar!/com/google/firebase/database/core/view/DataEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="e#1742#1743#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-admin/5.8.0/fe52ed20fe5b9273e219684ba68714592c1d4163/firebase-admin-5.8.0-sources.jar!/com/google/firebase/database/core/ValueEventRegistration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-admin/5.8.0/fe52ed20fe5b9273e219684ba68714592c1d4163/firebase-admin-5.8.0-sources.jar!/com/google/firebase/database/Query.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="182" column="0" lean-forward="false" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="32" column="58" lean-forward="false" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
+        <state relative-caret-position="286">
+          <caret line="132" column="25" lean-forward="true" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-admin/5.8.0/fe52ed20fe5b9273e219684ba68714592c1d4163/firebase-admin-5.8.0-sources.jar!/com/google/firebase/database/core/Repo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="361" column="25" lean-forward="false" selection-start-line="361" selection-start-column="25" selection-end-line="361" selection-end-column="25" />
+          <folding>
+            <element signature="e#13558#13703#0" expanded="false" />
+            <element signature="e#13702#13703#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-admin/5.8.0/fe52ed20fe5b9273e219684ba68714592c1d4163/firebase-admin-5.8.0-sources.jar!/com/google/firebase/database/DatabaseReference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="672" column="9" lean-forward="false" selection-start-line="672" selection-start-column="9" selection-end-line="672" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/onRequestDoneListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="215" column="27" lean-forward="true" selection-start-line="215" selection-start-column="27" selection-end-line="215" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="82" column="40" lean-forward="false" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+          <folding>
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="method#handleDistanceHelper#0;class#Main#0" expanded="false" />
+            <element signature="method#handleNewClient#0;class#Main#0" expanded="false" />
+            <element signature="class#1161:2184" expanded="false" />
+            <element signature="method#onChildAdded#0;class#1161:2184" expanded="false" />
+            <element signature="e#1316#1386#0" expanded="false" />
+            <element signature="method#onChildChanged#0;class#1161:2184" expanded="false" />
+            <element signature="method#onChildMoved#0;class#1161:2184" expanded="false" />
+            <element signature="method#onCancelled#0;class#1161:2184" expanded="false" />
+            <element signature="method#onChildChanged#0;class#2307:3719" expanded="false" />
+            <element signature="method#onChildMoved#0;class#2307:3719" expanded="false" />
+            <element signature="method#onCancelled#0;class#2307:3719" expanded="false" />
+            <element signature="method#onChildChanged#0;class#3847:4976" expanded="false" />
+            <element signature="method#onChildMoved#0;class#3847:4976" expanded="false" />
+            <element signature="method#onCancelled#0;class#3847:4976" expanded="false" />
+            <element signature="method#initFireBase#0;class#Main#0" expanded="false" />
+            <element signature="method#keepAlive#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/databse/b52.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="573" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bogucki/optimize/RouteUpdater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

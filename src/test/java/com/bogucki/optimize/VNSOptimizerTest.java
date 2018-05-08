@@ -17,8 +17,8 @@ public class VNSOptimizerTest {
     @Before
     public void setup() throws Exception {
         addresses = new String[52];
-        for (int i = 0; i < 52 ; i++) {
-            addresses[i] = String.valueOf(i+1);
+        for (int i = 0; i < 52; i++) {
+            addresses[i] = String.valueOf(i + 1);
         }
         meetings = new ArrayList<>();
         for (String address : addresses) {
@@ -34,7 +34,7 @@ public class VNSOptimizerTest {
         Route opt2 = optimizer.opt2(Route.getInitialRoute(distanceHelper));
 
         for (int j = 0; j < meetings.size(); j++) {
-            System.out.print(opt2.getCitiesOrder()[j]);
+            System.out.print(meetings.get(opt2.getCitiesOrder()[j]));
         }
         System.out.println();
 
@@ -44,14 +44,29 @@ public class VNSOptimizerTest {
     @Test
     public void testVNS() throws Exception {
 
-        for (int i = 0; i < 1; ++i) {
-            optimizer = new VNSOptimizer(new DistanceHelper(meetings));
-            optimizer.optimize();
-            for (int j = 0; j < meetings.size(); j++) {
-                System.out.print(optimizer.getCurrentBest().getCitiesOrder()[j]+ ", ");
-            }
-            System.out.println("\n"+optimizer.getCurrentBest().getCost());
-            VNSOptimizer.currentBest = null;
+
+        optimizer = new VNSOptimizer(distanceHelper);
+        Thread[] threads = new Thread[Runtime.getRuntime().availableProcessors()];
+        for (int i = 0; i < threads.length; i++) {
+            threads[i] = new Thread(optimizer::optimize);
+            threads[i].start();
         }
+
+
+        for (Thread thread : threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        for (int j = 0; j < meetings.size(); j++) {
+            System.out.print(meetings.get(optimizer.getCurrentBest().getCity(j)).getAddress() + ", ");
+        }
+        System.out.println("\n" + optimizer.getCurrentBest().getCost());
+        VNSOptimizer.currentBest.getRoute();
+        VNSOptimizer.currentBest = null;
+
     }
 }
