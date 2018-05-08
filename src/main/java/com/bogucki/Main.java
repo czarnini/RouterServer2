@@ -3,6 +3,7 @@ package com.bogucki;
 import com.bogucki.databse.DistanceHelper;
 import com.bogucki.optimize.OptimizationManager;
 import com.bogucki.optimize.RouteUpdater;
+import com.bogucki.optimize.models.Client;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -13,6 +14,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class Main {
+
+    public static final String DB_NAME = "Distances.db";  // "Berlin52Distances.db"//
 
     private static DatabaseReference routerDataBase;
 
@@ -27,7 +30,7 @@ public class Main {
     }
 
     private static void handleDistanceHelper() {
-        if (!new File("Distances.db").exists()) {
+        if (!new File(DB_NAME).exists()) {
             DistanceHelper helper = new DistanceHelper(null);
             helper.createAddressDictionary();
             helper.cleanUp();
@@ -39,9 +42,9 @@ public class Main {
             @Override
             public void onChildAdded(DataSnapshot snapshot, String previousChildName) {
                 try {
-//                    Client client = snapshot.getValue(Client.class);
-//                    DistanceHelper distanceHelper = new DistanceHelper(null);
-//                    distanceHelper.addAddressToDb(client.getAddress());
+                    Client client = snapshot.getValue(Client.class);
+                    DistanceHelper distanceHelper = new DistanceHelper(null);
+                    distanceHelper.addAddressToDb(client.getAddress());
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -81,8 +84,8 @@ public class Main {
                             .child(snapshot.getKey());
 
                     new Thread(new RouteUpdater(routeToUpdate, (error, ref) -> {
-                            System.out.println("Deleting update request");
-                            FirebaseDatabase.getInstance().getReference().child("update").child(routeToUpdate.getKey()).removeValueAsync();
+                        System.out.println("Deleting update request");
+                        FirebaseDatabase.getInstance().getReference().child("update").child(routeToUpdate.getKey()).removeValueAsync();
                     })
 
 

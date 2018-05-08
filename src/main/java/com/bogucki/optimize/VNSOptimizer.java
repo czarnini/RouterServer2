@@ -44,10 +44,10 @@ class VNSOptimizer {
                             distance += DISTANCE_STEP;
                         }
                     } else {
-                        notFeasibleCount++;
+/*                        notFeasibleCount++;
                         if (notFeasibleCount > 1000) {
                             break;
-                        }
+                        }*/
                     }
                 }
 

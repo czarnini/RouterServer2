@@ -1,5 +1,6 @@
 package com.bogucki.databse;
 
+import com.bogucki.Main;
 import com.bogucki.MapsAPI.GoogleMaps;
 import com.bogucki.optimize.models.Meeting;
 import org.apache.commons.lang3.StringUtils;
@@ -55,7 +56,7 @@ public class DistanceHelper {
     public DistanceHelper(ArrayList<Meeting> meetings) {
         this.meetings = meetings;
         try {
-            String databaseUrl = "jdbc:sqlite:Berlin52Distances.db";
+            String databaseUrl = "jdbc:sqlite:" + Main.DB_NAME;
             c = DriverManager.getConnection(databaseUrl);
             loadDistancesToRAM();
         } catch (SQLException e) {

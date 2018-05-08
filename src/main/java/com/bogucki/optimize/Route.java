@@ -140,16 +140,15 @@ public class Route {
             result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], hourOfStart + (result / 3600));
         }
         costVector[citiesOrder.length - 1] = result;
-        if(citiesOrder[1] == 22 && citiesOrder[0] == 0 && costVector[1] == 46){
+        if (citiesOrder[1] == 22 && citiesOrder[0] == 0 && costVector[1] == 46) {
             System.out.println("hejka");
         }
 
     }
 
 
-
     public int getCost() {
-        return costVector[costVector.length-1] + distanceHelper.getTime(citiesOrder[citiesOrder.length-1], citiesOrder[0], 0);
+        return costVector[costVector.length - 1] + distanceHelper.getTime(citiesOrder[citiesOrder.length - 1], citiesOrder[0], 0);
     }
 
 
@@ -179,8 +178,8 @@ public class Route {
     }
 
     public boolean isFeasible() {
-        int currentTime = 0;
-/*        for (int i = 0; i < citiesOrder.length - 1; i++) {
+/*        int currentTime = hourOfStart;
+        for (int i = 0; i < citiesOrder.length - 1; i++) {
             if (currentTime > distanceHelper.getMeetings().get(citiesOrder[i]).getLatestTimePossible()) {
                 return false;
             }
