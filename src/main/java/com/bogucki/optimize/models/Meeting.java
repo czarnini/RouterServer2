@@ -28,8 +28,20 @@ public class Meeting {
         meetingOrder = -1;
         planedTimeOfVisit = -1;
 
+        this.pushId = "pushId";
+        this.client = "client";
+        this.reason = "reason";
+
+        meetingOrder = -1;
+        planedTimeOfVisit = -1;
+
     }
 
+    public Meeting(String address, long earliestTimePossible, long latestTimePossible) {
+        this.address = address;
+        this.earliestTimePossible = earliestTimePossible;
+        this.latestTimePossible = latestTimePossible;
+    }
 
     public Meeting(String pushId, String client, String address, String reason,
                    long earliestTimePossible, long latestTimePossible) {

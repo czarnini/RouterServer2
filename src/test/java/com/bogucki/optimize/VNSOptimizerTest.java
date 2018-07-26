@@ -21,8 +21,24 @@ public class VNSOptimizerTest {
             addresses[i] = String.valueOf(i + 1);
         }
         meetings = new ArrayList<>();
+
+        int meetingIndex = 0;
+        int tmpETP;
+        int tmpLTP;
+
         for (String address : addresses) {
-            meetings.add(new Meeting(address));
+            if(meetingIndex < 20){
+                tmpETP = 0;
+                tmpLTP = 8000;
+            } else if(meetingIndex < 30){
+                tmpETP = 0;
+                tmpLTP = 7500;
+            }else{
+                tmpETP = 0;
+                tmpLTP = 7000;
+            }
+            meetings.add(new Meeting(address, tmpETP, tmpLTP));
+            meetingIndex++;
         }
         distanceHelper = new DistanceHelper(meetings);
         optimizer = new VNSOptimizer(distanceHelper);
@@ -46,24 +62,20 @@ public class VNSOptimizerTest {
 
 
         optimizer = new VNSOptimizer(distanceHelper);
-        Thread[] threads = new Thread[Runtime.getRuntime().availableProcessors()];
-        for (int i = 0; i < threads.length; i++) {
-            threads[i] = new Thread(optimizer::optimize);
-            threads[i].start();
-        }
+        Thread thread = new Thread(optimizer::optimize);
 
 
-        for (Thread thread : threads) {
             try {
                 thread.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
+
 
         for (int j = 0; j < meetings.size(); j++) {
             System.out.print(meetings.get(optimizer.getCurrentBest().getCity(j)).getAddress() + ", ");
         }
+
         System.out.println("\n" + optimizer.getCurrentBest().getCost());
         VNSOptimizer.currentBest.getRoute();
         VNSOptimizer.currentBest = null;

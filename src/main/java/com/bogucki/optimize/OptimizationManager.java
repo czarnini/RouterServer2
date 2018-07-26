@@ -52,30 +52,22 @@ public class OptimizationManager implements Runnable  {
 
     private void optimize() {
         VNSOptimizer optimizer = new VNSOptimizer(distanceHelper);
-        Thread[] threads = new Thread[Runtime.getRuntime().availableProcessors()];
-        for (int i = 0; i < threads.length; i++) {
-            threads[i] = new Thread(optimizer::optimize);
-            threads[i].start();
+        Thread optimizeThread = new Thread(optimizer::optimize);
+        optimizeThread.start();
+        try {
+            optimizeThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-
-
-        for (Thread thread : threads) {
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
         result = optimizer.getCurrentBest();
         result.getRoute();
-        if(Desktop.isDesktopSupported()){
+        /*if(Desktop.isDesktopSupported()){
             try {
                 Desktop.getDesktop().browse(result.getGoogleMapsUrl());
             } catch (IOException | URISyntaxException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
         publishOptimalRoute();
         VNSOptimizer.currentBest = null;
 

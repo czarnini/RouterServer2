@@ -30,7 +30,7 @@ public class Route {
         distanceHelper = helper;
         Arrays.fill(citiesOrder, -1);
         Arrays.fill(costVector, -1);
-        hourOfStart = calendar.get(Calendar.HOUR_OF_DAY);
+        hourOfStart = 0;//todo calendar.get(Calendar.HOUR_OF_DAY);
     }
 
 

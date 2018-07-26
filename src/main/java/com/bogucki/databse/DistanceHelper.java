@@ -70,7 +70,6 @@ public class DistanceHelper {
             return;
         }
 
-//        System.out.println("Loading requested cities from HDD to RAM");
         addressesIds = new ArrayList<>();
         costs = new HashMap<>();
 
