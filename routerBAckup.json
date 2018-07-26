@@ -1,0 +1,44 @@
+{
+    "clients" : {
+    "-KvC05d8Y-QltO4bNnyO" : {
+        "address" : "janowskiego 13, warszawa",
+            "name" : "AMADEUSZ WILK"
+    },
+    "-KvC05dJE5n9CMUp6gvY" : {
+        "address" : "wspólna 73, warszawa",
+            "name" : "BORYS RUTKOWSKI"
+    }
+},
+    "meetings" : {
+    "02_05_2018" : {
+        "-L1qP28tERZlQa-eKWgv" : {
+            "address" : "Wspólna 73, Warszawa",
+                "client" : "Marek Jankowski",
+                "earliestTimePossible" : 100,
+                "latestTimePossible" : 200,
+                "meetingOrder" : 11,
+                "planedTimeOfVisit" : 1525300378332,
+                "pushId" : "-L1qP28tERZlQa-eKWgv",
+                "reason" : "Odbiór zamówienia"
+        },
+        "-L1qP4Lyl2uvLLANBQas" : {
+            "address" : "Janowskiego 13, Warszawa",
+                "client" : "Jan Nowakowski",
+                "earliestTimePossible" : 0,
+                "latestTimePossible" : 0,
+                "meetingOrder" : 19,
+                "planedTimeOfVisit" : 1525303552332,
+                "pushId" : "-L1qP4Lyl2uvLLANBQas",
+                "reason" : "aaa"
+        }
+    },
+    "07_03_2018" : {},
+    "07_04_2018" : {}
+},
+    "optimize" : {
+
+    },
+    "update" : {
+
+    }
+}

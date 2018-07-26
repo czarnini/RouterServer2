@@ -20,6 +20,7 @@ public class Route {
     private DistanceHelper distanceHelper;
     private int cost;
     private boolean feasible;
+    private int feasiblityRating;
 
     private Route(int routeLength, DistanceHelper helper) {
         Calendar calendar = Calendar.getInstance();
@@ -30,7 +31,7 @@ public class Route {
         distanceHelper = helper;
         Arrays.fill(citiesOrder, -1);
         Arrays.fill(costVector, -1);
-        hourOfStart = calendar.get(Calendar.HOUR_OF_DAY);
+        hourOfStart = 0;//todo calendar.get(Calendar.HOUR_OF_DAY);
     }
 
 
@@ -140,15 +141,12 @@ public class Route {
             result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], hourOfStart + (result / 3600));
         }
         costVector[citiesOrder.length - 1] = result;
-        if (citiesOrder[1] == 22 && citiesOrder[0] == 0 && costVector[1] == 46) {
-            System.out.println("hejka");
-        }
 
     }
 
 
     public int getCost() {
-        return costVector[costVector.length - 1] + distanceHelper.getTime(citiesOrder[citiesOrder.length - 1], citiesOrder[0], 0);
+        return costVector[costVector.length - 1] + distanceHelper.getTime(citiesOrder[citiesOrder.length - 1], citiesOrder[0], 0) + feasiblityRating;
     }
 
 
@@ -178,14 +176,30 @@ public class Route {
     }
 
     public boolean isFeasible() {
-/*        int currentTime = hourOfStart;
+        int currentTime = hourOfStart;
         for (int i = 0; i < citiesOrder.length - 1; i++) {
             if (currentTime > distanceHelper.getMeetings().get(citiesOrder[i]).getLatestTimePossible()) {
                 return false;
             }
-            currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], currentTime) / 3600;
-        }*/
+            currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], currentTime);// 3600;
+        }
         return true;
+    }
+
+
+    public void countFeasibilityRating() {
+        int result = 0;
+        int currentTime = hourOfStart;
+        int timeDiff;
+
+        for (int i = 0; i < citiesOrder.length - 1; i++) {
+            timeDiff = (int) (currentTime -  distanceHelper.getMeetings().get(citiesOrder[i]).getLatestTimePossible());
+            if ( timeDiff > 0) {
+                result += 0.5 * timeDiff;
+            }
+            currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], currentTime);// 3600;
+        }
+        feasiblityRating = result;
     }
 
     public void getRoute() {
@@ -195,7 +209,7 @@ public class Route {
                 int iThCity = citiesOrder[i];
                 int hour = costVector[i] / 3600;
                 int minute = (costVector[i] - hour * 3600) / 60;
-                System.out.println(String.format("%1$-" + 40 + "s", distanceHelper.getMeetings().get(iThCity).getAddress()) + "\t(" + getCostAt(i) + "/" + currentTime + ")\tETA: " + String.format("%02d:%02d", hourOfStart + hour, minute));
+                System.out.println(String.format("%1$-" + 40 + "s", distanceHelper.getMeetings().get(iThCity).getAddress()) + "\t(" + currentTime + " // "+  String.valueOf(distanceHelper.getMeetings().get(iThCity).getLatestTimePossible() - currentTime)  + ")\tETA: " + String.format("%02d:%02d", hourOfStart + hour, minute));
                 if (i + 1 != citiesOrder.length)
                     currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 0);
             }

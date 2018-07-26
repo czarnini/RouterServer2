@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class Main {
 
-    public static final String DB_NAME = "Distances.db";  // "Berlin52Distances.db"//
+    public static final String DB_NAME = "Berlin52Distances.db";//"Distances.db";  // "Berlin52Distances.db"//
 
     private static DatabaseReference routerDataBase;
 
