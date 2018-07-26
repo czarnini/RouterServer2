@@ -10,9 +10,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Random;
 
-/**
- * Klasa opisująca trasę przejazdu. Reprezentacją trasy będzie tablica indeksów.
- */
 public class Route {
     private int[] citiesOrder;
     private int[] costVector;
@@ -94,8 +91,6 @@ public class Route {
     }
 
     static Route getInitialRoute(DistanceHelper helper) {
-
-
         Route route = new Route(helper.getMeetings().size(), helper);
         for (int i = 0; i < helper.getMeetings().size(); i++) {
             route.setCity(i, i);
@@ -111,13 +106,14 @@ public class Route {
 
         Random generator = new Random();
         Route route = new Route(helper.getMeetings().size(), helper);
-        route.setCity(1, 0);
+        route.setCity(0, 0);
+        int insertIndex;
+
         for (int i = 1; i < helper.getMeetings().size(); i++) {
-            int insertIndex;
             do {
                 insertIndex = 1 + generator.nextInt(helper.getMeetings().size() - 1);
             } while (route.getCity(insertIndex) != -1);
-            route.setCity(i, insertIndex); //insertIndex
+            route.setCity(i, insertIndex);
         }
         route.countCost();
         route.countCostVector();
@@ -156,20 +152,14 @@ public class Route {
      */
     Route generateNeighbourRoute(int distance) {
         Route result = new Route(this);
-        result.setCity(0, 0);
-        for (int i = 1; i < distance - 1; i++) {
-            int tmp = result.getCity(i);
-            result.setCity(getCity(i + 1), i);
-            result.setCity(tmp, i + 1);
-        }
-
+        Random generator = new Random();
+        int a,b;
         for (int i = 0; i < distance; i++) {
-            result.setCost(
-                    result.getCost()
-                            - distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 9)
-                            + distanceHelper.getTime(result.getCity(i), result.getCity(i + 1), 9)
-            );
-
+            do{
+                a = 1 + generator.nextInt(citiesOrder.length - 1);
+                b = a + generator.nextInt(citiesOrder.length - a);
+            }while(a==b);
+            result.swap(a,b);
         }
         result.countCostVector();
         return result;
@@ -236,5 +226,10 @@ public class Route {
         System.out.println(result.toString());
 
         return new URI(result.toString());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Route && Arrays.equals(citiesOrder, ((Route) obj).citiesOrder);
     }
 }

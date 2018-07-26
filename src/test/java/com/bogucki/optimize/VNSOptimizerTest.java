@@ -48,10 +48,10 @@ public class VNSOptimizerTest {
     public void testOpt2() throws Exception {
 
         Route opt2 = optimizer.opt2(Route.getInitialRoute(distanceHelper));
-
-        for (int j = 0; j < meetings.size(); j++) {
-            System.out.print(meetings.get(opt2.getCitiesOrder()[j]));
-        }
+        opt2.getRoute();
+//        for (int j = 0; j < meetings.size(); j++) {
+//            System.out.print(meetings.get(opt2.getCitiesOrder()[j]));
+//        }
         System.out.println();
 
     }
@@ -59,24 +59,14 @@ public class VNSOptimizerTest {
 
     @Test
     public void testVNS() throws Exception {
+            optimizer = new VNSOptimizer(distanceHelper);
+            optimizer.optimize();
 
-
-        optimizer = new VNSOptimizer(distanceHelper);
-        Thread thread = new Thread(optimizer::optimize);
-
-
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-
-        for (int j = 0; j < meetings.size(); j++) {
+      /*  for (int j = 0; j < meetings.size(); j++) {
             System.out.print(meetings.get(optimizer.getCurrentBest().getCity(j)).getAddress() + ", ");
         }
 
-        System.out.println("\n" + optimizer.getCurrentBest().getCost());
+        System.out.println("\n" + optimizer.getCurrentBest().getCost());*/
         VNSOptimizer.currentBest.getRoute();
         VNSOptimizer.currentBest = null;
 
