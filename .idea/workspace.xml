@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b14f0ed-e364-4f3f-94b9-6449ea8edda7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routerBAckup.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8fecd06c-335f-4ff0-94c1-f0bb004aa258/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/8fecd06c-335f-4ff0-94c1-f0bb004aa258/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/8fecd06c-335f-4ff0-94c1-f0bb004aa258/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/8fecd06c-335f-4ff0-94c1-f0bb004aa258/_metadata_/metadata.values.at" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/Main.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/databse/DistanceHelper.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/databse/DistanceHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/Route.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/Route.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/VNSOptimizer.class" afterPath="$PROJECT_DIR$/out/production/classes/com/bogucki/optimize/VNSOptimizer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/databse/DistanceHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/databse/DistanceHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/OptimizationManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/Route.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/VNSOptimizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/models/Meeting.java" afterPath="$PROJECT_DIR$/src/main/java/com/bogucki/optimize/models/Meeting.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/bogucki/optimize/VNSOptimizerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -918,7 +908,7 @@
       <workItem from="1529395017043" duration="2494000" />
       <workItem from="1529998094263" duration="8234000" />
       <workItem from="1531658698312" duration="1665000" />
-      <workItem from="1532619024851" duration="965000" />
+      <workItem from="1532619024851" duration="994000" />
     </task>
     <task id="LOCAL-00001" summary="foo">
       <created>1524666564187</created>
@@ -962,7 +952,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525763309927</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="working on feasabilty">
+      <created>1532620019650</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1532620019650</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -998,7 +995,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156031000" />
+    <option name="totallyTimeSpent" value="156060000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1107,7 +1104,8 @@
     <MESSAGE value="added berlin 52 dataset" />
     <MESSAGE value="added route updater + B52" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="working on feasabilty" />
+    <option name="LAST_COMMIT_MESSAGE" value="working on feasabilty" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
