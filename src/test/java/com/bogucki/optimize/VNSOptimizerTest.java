@@ -7,6 +7,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import static com.bogucki.optimize.RouteTest.ROUTE_SIZE;
+
 public class VNSOptimizerTest {
 
     private String[] addresses;
@@ -16,8 +18,8 @@ public class VNSOptimizerTest {
 
     @Before
     public void setup() throws Exception {
-        addresses = new String[52];
-        for (int i = 0; i < 52; i++) {
+        addresses = new String[ROUTE_SIZE];
+        for (int i = 0; i < ROUTE_SIZE; i++) {
             addresses[i] = String.valueOf(i + 1);
         }
         meetings = new ArrayList<>();
@@ -48,10 +50,10 @@ public class VNSOptimizerTest {
     public void testOpt2() throws Exception {
 
         Route opt2 = optimizer.opt2(Route.getInitialRoute(distanceHelper));
-
-        for (int j = 0; j < meetings.size(); j++) {
-            System.out.print(meetings.get(opt2.getCitiesOrder()[j]));
-        }
+        opt2.getRoute();
+//        for (int j = 0; j < meetings.size(); j++) {
+//            System.out.print(meetings.get(opt2.getCitiesOrder()[j]));
+//        }
         System.out.println();
 
     }
@@ -59,26 +61,24 @@ public class VNSOptimizerTest {
 
     @Test
     public void testVNS() throws Exception {
+            optimizer = new VNSOptimizer(distanceHelper);
+            optimizer.optimize();
 
-
-        optimizer = new VNSOptimizer(distanceHelper);
-        Thread thread = new Thread(optimizer::optimize);
-
-
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-
-        for (int j = 0; j < meetings.size(); j++) {
+      /*  for (int j = 0; j < meetings.size(); j++) {
             System.out.print(meetings.get(optimizer.getCurrentBest().getCity(j)).getAddress() + ", ");
         }
 
-        System.out.println("\n" + optimizer.getCurrentBest().getCost());
+        System.out.println("\n" + optimizer.getCurrentBest().getCost());*/
         VNSOptimizer.currentBest.getRoute();
         VNSOptimizer.currentBest = null;
 
+    }
+
+
+    @Test
+    public void testLocal1Shift(){
+        Route x = Route.newRandomRoute(distanceHelper);
+        x.getRoute();
+        optimizer.local1Shift(x).getRoute();
     }
 }

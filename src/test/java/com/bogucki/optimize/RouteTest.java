@@ -9,25 +9,43 @@ import java.util.ArrayList;
 
 public class RouteTest {
 
-    private String[] addresses = new String[]{"wspólna 73,warszawa",
-            "mielczarskiego 10,warszawa",
-            "janowskiego 13,warszawa",
-            "konduktorska 2,warszawa",
-            "komorska 29, warszawa",
-            "herbsta 4, warszawa",
-            "świętokrzyska 31, warszawa",
-            "berensona 12b, warszawa"};
-    private ArrayList<Meeting> meetings = new ArrayList<>();
+    public static final int ROUTE_SIZE = 52;
+    private String[] addresses;
+    private ArrayList<Meeting> meetings;
+    private DistanceHelper distanceHelper;
     private Route route;
 
     @Before
     public void setUp() throws Exception {
-        for (String address : addresses) {
-            meetings.add(new Meeting(address));
+        addresses = new String[ROUTE_SIZE];
+        meetings = new ArrayList<>();
+
+
+        for (int i = 0; i < ROUTE_SIZE; i++) {
+            addresses[i] = String.valueOf(i + 1);
         }
-        route = Route.getInitialRoute(new DistanceHelper(meetings));
+        for (String address : addresses) {
+            meetings.add(new Meeting(address, 0, 10));
+        }
+
+        distanceHelper = new DistanceHelper(meetings);
+        route = Route.getInitialRoute(distanceHelper);
         route.getRoute();
 
+    }
+
+    @Test
+    public void testSwabByRandom(){
+        for (int i = 0; i < 30; i++) {
+            route = this.route.generateNeighbourRoute(i);
+            for (int j = 0; j < route.getCitiesOrder().length; j++) {
+                for (int k = 0; k < route.getCitiesOrder().length; k++) {
+                    if(j!=k && route.getCitiesOrder()[j] == route.getCitiesOrder()[k] ){
+                        System.out.println("oo");
+                    }
+                }
+            }
+        }
     }
 
 
@@ -35,7 +53,11 @@ public class RouteTest {
     public void shouldSwapRouteBetweenFirstElementWithForth() throws Exception {
         int[] orderBeforeSwap = route.getCitiesOrder();
         int costBeforeSwap = route.getCost();
-        route.swap(2, 5);
+        route.swap(1,0 );
+        route.getRoute();
+
+
+
         int[] orderAfterSwap = route.getCitiesOrder();
         route.getRoute();
 
