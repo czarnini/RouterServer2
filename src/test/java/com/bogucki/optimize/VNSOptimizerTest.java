@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import static com.bogucki.optimize.RouteTest.ROUTE_SIZE;
 
@@ -24,23 +25,14 @@ public class VNSOptimizerTest {
         }
         meetings = new ArrayList<>();
 
-        int meetingIndex = 0;
+        Random generator = new Random();
         int tmpETP;
         int tmpLTP;
 
         for (String address : addresses) {
-            if(meetingIndex < 20){
-                tmpETP = 0;
-                tmpLTP = 8000;
-            } else if(meetingIndex < 30){
-                tmpETP = 0;
-                tmpLTP = 7500;
-            }else{
-                tmpETP = 0;
-                tmpLTP = 7000;
-            }
+            tmpETP = 500;
+            tmpLTP = tmpETP + generator.nextInt(8000);
             meetings.add(new Meeting(address, tmpETP, tmpLTP));
-            meetingIndex++;
         }
         distanceHelper = new DistanceHelper(meetings);
         optimizer = new VNSOptimizer(distanceHelper);
@@ -61,14 +53,9 @@ public class VNSOptimizerTest {
 
     @Test
     public void testVNS() throws Exception {
-            optimizer = new VNSOptimizer(distanceHelper);
-            optimizer.optimize();
+        optimizer = new VNSOptimizer(distanceHelper);
+        optimizer.optimize();
 
-      /*  for (int j = 0; j < meetings.size(); j++) {
-            System.out.print(meetings.get(optimizer.getCurrentBest().getCity(j)).getAddress() + ", ");
-        }
-
-        System.out.println("\n" + optimizer.getCurrentBest().getCost());*/
         VNSOptimizer.currentBest.getRoute();
         VNSOptimizer.currentBest = null;
 
@@ -76,7 +63,7 @@ public class VNSOptimizerTest {
 
 
     @Test
-    public void testLocal1Shift(){
+    public void testLocal1Shift() {
         Route x = Route.newRandomRoute(distanceHelper);
         x.getRoute();
         optimizer.local1Shift(x).getRoute();

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class RouteTest {
 
-    public static final int ROUTE_SIZE = 52;
+    public static final int ROUTE_SIZE = 8;
     private String[] addresses;
     private ArrayList<Meeting> meetings;
     private DistanceHelper distanceHelper;
@@ -53,7 +53,7 @@ public class RouteTest {
     public void shouldSwapRouteBetweenFirstElementWithForth() throws Exception {
         int[] orderBeforeSwap = route.getCitiesOrder();
         int costBeforeSwap = route.getCost();
-        route.swap(1,0 );
+        route.swapForOpt2(3,5 );
         route.getRoute();
 
 
@@ -67,6 +67,24 @@ public class RouteTest {
         }
     }
 
+
+    @Test
+    public void testOrdinarySwapping() throws Exception {
+        int[] orderBeforeSwap = route.getCitiesOrder();
+        int costBeforeSwap = route.getCost();
+        route.swap(5,2);
+        route.getRoute();
+
+
+
+        int[] orderAfterSwap = route.getCitiesOrder();
+        route.getRoute();
+
+        System.out.println(costBeforeSwap + "   " + route.getCost());
+        for (int i = 0; i < orderAfterSwap.length; i++) {
+            System.out.println("index: " + i + "\t\tBefore: " + orderBeforeSwap[i] + "\t\tAfter: " + orderAfterSwap[i]);
+        }
+    }
 
     @Test
     public void shouldGenerateNeighbourdRoute() throws Exception {

@@ -66,7 +66,7 @@ public class Route {
         return costVector[city];
     }
 
-    void swap(int i, int j) {
+    void swapForOpt2(int i, int j) {
 
         int result[] = new int[citiesOrder.length];
         for (int tmp = 0; tmp < result.length; tmp++) {
@@ -81,8 +81,56 @@ public class Route {
             if (tmp == result.length - 1) {
                 break;
             }
-            cost -= distanceHelper.getTime(getCity(tmp), getCity(tmp + 1), 9);
-            cost += distanceHelper.getTime(result[tmp], result[tmp + 1], 9);
+            cost -= distanceHelper.getTime(getCity(tmp), getCity(tmp + 1), 0);
+            cost += distanceHelper.getTime(result[tmp], result[tmp + 1], 0);
+        }
+        citiesOrder = Arrays.copyOf(result, result.length);
+        countCostVector();
+
+    }
+
+    void swap(int from, int to) {
+        if(from > citiesOrder.length-1 ||  from >citiesOrder.length-1 ){
+            System.out.println("FROM " + from + "  TO  " + to +"  len was " + citiesOrder.length);
+            return;
+        }
+        int result[] = new int[citiesOrder.length];
+        if (from > to) {
+            for (int i = 0; i < result.length; i++) {
+                if (i < to || i > from ) {
+                    result[i] = citiesOrder[i];
+                }  else if (i == to) {
+                    result[i] = citiesOrder[from];
+                }else if (i <= from) {
+                    result[i] = citiesOrder[i - 1];
+                }
+            }
+
+            if(from + 1 != citiesOrder.length){
+                cost -= distanceHelper.getTime(getCity(from), getCity(from+1), 0);
+                cost += distanceHelper.getTime(getCity(from), getCity(to), 0);
+
+                cost -= distanceHelper.getTime(getCity(from-1), getCity(from), 0);
+                cost += distanceHelper.getTime(getCity(from-1), getCity(from+1), 0);
+            } else{
+                cost += distanceHelper.getTime(getCity(from), getCity(to), 0);
+
+                cost -= distanceHelper.getTime(getCity(from-1), getCity(from), 0);
+            }
+            cost -= distanceHelper.getTime(getCity(to-1), getCity(to), 0);
+            cost += distanceHelper.getTime(getCity(to-1), getCity(from), 0);
+
+
+        } else {
+            for (int i = 0; i < result.length; i++) {
+                if (i < from || i > to) {
+                    result[i] = citiesOrder[i];
+                } else if (i < to) {
+                    result[i] = citiesOrder[i + 1];
+                } else if (i == to) {
+                    result[i] = citiesOrder[from];
+                }
+            }
         }
         citiesOrder = Arrays.copyOf(result, result.length);
         countCostVector();
@@ -123,7 +171,7 @@ public class Route {
     synchronized void countCost() {
         int result = 0;
         for (int i = 0; i < citiesOrder.length - 1; i++) {
-            result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], hourOfStart + (result / 3600));
+            result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 0); //hourOfStart + (result / 3600)
         }
         cost = result;
     }
@@ -133,7 +181,7 @@ public class Route {
 
         for (int i = 0; i < citiesOrder.length - 1; i++) {
             costVector[i] = result;
-            result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], hourOfStart + (result / 3600));
+            result += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 0); //hourOfStart + (result / 3600)
         }
         costVector[citiesOrder.length - 1] = result;
 
@@ -152,26 +200,26 @@ public class Route {
     Route generateNeighbourRoute(int distance) {
         Route result = new Route(this);
         Random generator = new Random();
-        int a,b;
+        int a, b;
         for (int i = 0; i < distance; i++) {
-            do{
+            do {
                 a = 1 + generator.nextInt(citiesOrder.length - 1);
                 b = a + generator.nextInt(citiesOrder.length - a);
-            }while(a==b);
-            result.swap(a,b);
+            } while (a == b);
+            result.swapForOpt2(a, b);
         }
         result.countCostVector();
         return result;
     }
 
     public boolean isFeasible() {
-/*        int currentTime = hourOfStart;
+        int currentTime = hourOfStart;
         for (int i = 0; i < citiesOrder.length - 1; i++) {
             if (currentTime > distanceHelper.getMeetings().get(citiesOrder[i]).getLatestTimePossible()) {
                 return false;
             }
             currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], currentTime) / 3600;
-        }*/
+        }
         return true;
     }
 
@@ -182,7 +230,7 @@ public class Route {
                 int iThCity = citiesOrder[i];
                 int hour = costVector[i] / 3600;
                 int minute = (costVector[i] - hour * 3600) / 60;
-                System.out.println(String.format("%1$-" + 40 + "s", distanceHelper.getMeetings().get(iThCity).getAddress()) + "\t(" + getCostAt(i) + "/" + currentTime + ")\tETA: " + String.format("%02d:%02d", hourOfStart + hour, minute));
+                System.out.println(String.format("%1$-" + 40 + "s", distanceHelper.getMeetings().get(iThCity).getAddress()) + "\t(" + getCostAt(i) + "/" + distanceHelper.getMeetings().get(iThCity).getLatestTimePossible() + ")\tETA: " + String.format("%02d:%02d", hourOfStart + hour, minute));
                 if (i + 1 != citiesOrder.length)
                     currentTime += distanceHelper.getTime(citiesOrder[i], citiesOrder[i + 1], 0);
             }

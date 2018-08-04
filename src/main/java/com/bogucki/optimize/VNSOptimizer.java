@@ -6,13 +6,13 @@ import com.bogucki.optimize.models.Meeting;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 
 class VNSOptimizer {
     private ArrayList<Meeting> meetings;
     private DistanceHelper distanceHelper;
     static Route currentBest = null;
-    private static int INITIAL_DISTANCE = 1;
-    private static int DISTANCE_STEP = 1;
+    private HashMap<Integer, ArrayList<Integer>> arcsToAvoid;
 
     VNSOptimizer(DistanceHelper distanceHelper) {
         this.distanceHelper = distanceHelper;
@@ -24,15 +24,14 @@ class VNSOptimizer {
     void optimize() {
         try {
             long start = System.currentTimeMillis();
-            while (System.currentTimeMillis() - start < 70 * 1000) {
+            while (System.currentTimeMillis() - start < 10 * 1000) {
                 Route X = createFeasibleRoute();
-                Route tmp= (GVNS(X));
-                if(tmp.getCost() < currentBest.getCost()){
+                Route tmp = (GVNS(X));
+                if (tmp.getCost() < currentBest.getCost()) {
                     System.out.println(String.format("Prev best %d \t curr best %d", currentBest.getCost(), tmp.getCost()));
                     currentBest = new Route(tmp);
                 }
             }
-
             System.out.println("\n\n\n\n");
         } catch (Exception e) {
             e.printStackTrace();
@@ -44,7 +43,7 @@ class VNSOptimizer {
         Route x = opt2(Route.newRandomRoute(distanceHelper));
         while (!x.isFeasible()) {
             int level = 1;
-            while (!x.isFeasible() && level < 50) {
+            while (!x.isFeasible() && level < 52) {
                 Route xPrim = opt2(x.generateNeighbourRoute(level));
                 if (xPrim.getCost() < x.getCost()) {
                     x = new Route(xPrim);
@@ -62,13 +61,13 @@ class VNSOptimizer {
         Route localMinimum = new Route(VND(x));
         Route xPrim;
         int level = 1;
-        while (level < 50) {
+        while (level < 5) {
             xPrim = VND(localMinimum.generateNeighbourRoute(level));
             if (xPrim.getCost() < localMinimum.getCost()) {
                 localMinimum = new Route(xPrim);
                 level = 1;
             } else {
-                level++;
+                level += 1;
             }
         }
         return localMinimum;
@@ -76,22 +75,43 @@ class VNSOptimizer {
 
 
     private Route VND(Route x) {
-        Route xPrim;
+        Route a, b;
         Route localOptimum = new Route(x);
-            do {
-                localOptimum = local1Shift(localOptimum);
-                xPrim = opt2(x);
-            } while (!x.equals(xPrim));
-
-        return localOptimum;
+        do {
+            a = local1Shift(localOptimum);
+            b = opt2(a);
+        } while (!a.equals(b));
+        return b;
     }
 
-    public Route local1Shift(Route x) {
+    Route local1Shift(Route x) {
+        int fromCity, toCity;
         Route localBest = new Route(x);
         Route xPrim = new Route(x);
-        for (int i = 1; i < meetings.size(); i++) {
-            for (int j = i + 1; j < meetings.size() - 1; j++) {
-                xPrim.swap(i, j);
+        for (int from = 1; from < meetings.size(); from++) {
+            for (int to = 1; to < meetings.size(); to++) {
+                fromCity = xPrim.getCity(from);
+                toCity = xPrim.getCity(to);
+                if (from == to) {
+                    continue;
+                }else if(fromCity < toCity){
+                    if(isFrobidedArc(fromCity, toCity)){
+                        continue;
+                    } if(isFrobidedArc(fromCity-1, fromCity+1)){
+                        continue;
+                    } if(toCity != meetings.size()-1 && isFrobidedArc(fromCity, toCity+1)){
+                        continue;
+                    }
+                }else {
+                    if(isFrobidedArc(fromCity, toCity)){
+                        continue;
+                    } if(isFrobidedArc(toCity-1, fromCity)){
+                        continue;
+                    } if(fromCity != meetings.size()-1 && isFrobidedArc(fromCity-1, fromCity+1)){
+                        continue;
+                    }
+                }
+                xPrim.swap(from, to);
                 if (xPrim.getCost() < localBest.getCost()) {
                     localBest = new Route(xPrim);
                 }
@@ -100,21 +120,27 @@ class VNSOptimizer {
         return localBest;
     }
 
-
-    synchronized private boolean isBetterRouteFound(Route opt2Result) {
-        if ((opt2Result.getCost() >= currentBest.getCost())) {
-            return false;
-        } else {
-            opt2Result.getRoute();
-            System.out.println(Thread.currentThread().getName() + "new best found! " + String.format("%.2f", opt2Result.getCost() / 1.0));
-            currentBest = new Route(opt2Result);
-            return true;
-        }
+    private boolean isFrobidedArc(int from, int to) {
+        return arcsToAvoid.get(from).indexOf(to) != -1;
     }
+
 
     private synchronized void initialize() {
         if (null == currentBest) {
             currentBest = Route.getInitialRoute(distanceHelper);
+        }
+        generateArcsToAvoid();
+    }
+
+    private void generateArcsToAvoid() {
+        arcsToAvoid = new HashMap<>();
+        for (int from = 0, meetingsSize = meetings.size(); from < meetingsSize; from++) {
+            arcsToAvoid.put(from, new ArrayList<>());
+            for (int to = 0, meetingsSize1 = meetings.size(); to < meetingsSize1; to++) {
+                if (meetings.get(from).getEarliestTimePossible() + distanceHelper.getTime(from, to, (int) meetings.get(from).getEarliestTimePossible()) > meetings.get(to).getLatestTimePossible()) {
+                    arcsToAvoid.get(from).add(to);
+                }
+            }
         }
     }
 
@@ -125,27 +151,24 @@ class VNSOptimizer {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
 
-            for (int i = 0; i < meetings.size() - 2; i++) {
-                for (int j = i + 2; j < meetings.size() - 1; j++) {
-                    int IthCity = opt2ResultLocal.getCity(i);
-                    int IthPlusOneCity = opt2ResultLocal.getCity(i + 1);
-                    int jThCity = opt2ResultLocal.getCity(j);
-                    int jThPlusOneCity = opt2ResultLocal.getCity(j + 1);
+        for (int i = 0; i < meetings.size() - 2; i++) {
+            for (int j = i + 2; j < meetings.size() - 1; j++) {
+                int IthCity = opt2ResultLocal.getCity(i);
+                int IthPlusOneCity = opt2ResultLocal.getCity(i + 1);
+                int jThCity = opt2ResultLocal.getCity(j);
+                int jThPlusOneCity = opt2ResultLocal.getCity(j + 1);
 
-                    int timeOfStartFromIth = opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(i) / 3600;
-                    int timeOfStartFromJth = opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(j) / 3600;
+                int timeOfStartFromIth = 0;//opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(i) / 3600;
+                int timeOfStartFromJth = 0;//opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(j) / 3600;
 
-                    distA = distanceHelper.getTime(IthCity, IthPlusOneCity, timeOfStartFromIth) + distanceHelper.getTime(jThCity, jThPlusOneCity, timeOfStartFromJth);
-                    distB = distanceHelper.getTime(IthCity, jThCity, timeOfStartFromIth) + distanceHelper.getTime(IthPlusOneCity, jThPlusOneCity, timeOfStartFromJth);
+                distA = distanceHelper.getTime(IthCity, IthPlusOneCity, timeOfStartFromIth) + distanceHelper.getTime(jThCity, jThPlusOneCity, timeOfStartFromJth);
+                distB = distanceHelper.getTime(IthCity, jThCity, timeOfStartFromIth) + distanceHelper.getTime(IthPlusOneCity, jThPlusOneCity, timeOfStartFromJth);
 
-                    if (distA > distB) {
-                        opt2ResultLocal.swap(i + 1, j);
-                        if(opt2ResultLocal.getCitiesOrder()[0] == opt2ResultLocal.getCitiesOrder()[1]){
-                            System.out.println("OOOOOOOOOOO");
-                        }
-                    }
+                if (distA > distB) {
+                    opt2ResultLocal.swapForOpt2(i + 1, j);
                 }
             }
+        }
         return opt2ResultLocal;
     }
 

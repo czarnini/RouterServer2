@@ -83,5 +83,7 @@
     <orderEntry type="library" name="json-20171018" level="application" />
     <orderEntry type="library" name="commons-lang3-3.7 (3)" level="project" />
     <orderEntry type="library" name="json-20171018" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.7 (3)" level="project" />
+    <orderEntry type="library" name="sqlite-jdbc-3.21.0 (2)" level="project" />
   </component>
 </module>
