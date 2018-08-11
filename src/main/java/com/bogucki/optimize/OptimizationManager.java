@@ -81,7 +81,7 @@ public class OptimizationManager implements Runnable  {
         for (int i = 0; i < order.length - 1; i++) {
             distanceHelper.getMeetings().get(order[i]).setMeetingOrder(i);
             distanceHelper.getMeetings().get(order[i]).setPlanedTimeOfVisit(currentTime);
-            currentTime += distanceHelper.getTime(order[i], order[i+1],0) *1000;
+            currentTime += distanceHelper.getTime(order[i], order[i+1], (int) (currentTime /1000*3600)) *1000;
             valuesToSend.put(distanceHelper.getMeetings().get(order[i]).getPushId(), distanceHelper.getMeetings().get(order[i]).toMap());
         }
 

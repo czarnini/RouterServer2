@@ -117,7 +117,7 @@ public class DistanceHelper {
         if (originID == destinationID) {
             return 0;
         }
-        return costs.get(originID).get(destinationID).get(0);
+        return costs.get(originID).get(destinationID).get(timeOfStart);
 
     }
 
@@ -274,20 +274,24 @@ public class DistanceHelper {
 
     private String generateTimeDistribution(int midnightTime) {
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < 24; i++) {
+        for (int i = 1; i <= 24; i++) {
             result.append(", ");
-            if (i <= 6) {
+            if (i <= 5 || i == 24) {
                 result.append(midnightTime);
-            } else if (i <= 10) {
+            } else if (i == 6 || i == 23) {
+                result.append(2 * midnightTime);
+            } else if (i == 7) {
                 result.append(5 * midnightTime);
-            } else if (i <= 14) {
-                result.append(2.5 * midnightTime);
-            } else if (i <= 18) {
+            } else if (i == 8) {
+                result.append(6 * midnightTime);
+            } else if (i == 9 || (i >= 13 && i <= 17) || i == 21) {
+                result.append(4 * midnightTime);
+            } else if ((i >= 10 && i <= 12) || i == 18 || i == 22) {
+                result.append(3 * midnightTime);
+            } else if (i == 19) {
+                result.append(6 * midnightTime);
+            } else if (i == 20) {
                 result.append(5 * midnightTime);
-            } else if (i <= 22) {
-                result.append(1.5 * midnightTime);
-            } else {
-                result.append(midnightTime);
             }
         }
 

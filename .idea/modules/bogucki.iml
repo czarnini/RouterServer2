@@ -85,5 +85,10 @@
     <orderEntry type="library" name="json-20171018" level="project" />
     <orderEntry type="library" name="commons-lang3-3.7 (3)" level="project" />
     <orderEntry type="library" name="sqlite-jdbc-3.21.0 (2)" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.7 (2)" level="project" />
+    <orderEntry type="library" name="json-20171018" level="project" />
+    <orderEntry type="library" name="okhttp-3.9.1" level="project" />
+    <orderEntry type="library" name="okio-1.13.0" level="project" />
+    <orderEntry type="library" name="sqlite-jdbc-3.21.0" level="project" />
   </component>
 </module>

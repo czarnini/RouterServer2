@@ -30,8 +30,8 @@ public class VNSOptimizerTest {
         int tmpLTP;
 
         for (String address : addresses) {
-            tmpETP = 500;
-            tmpLTP = tmpETP + generator.nextInt(8000);
+            tmpETP = generator.nextInt(8000);
+            tmpLTP = tmpETP + 4500;
             meetings.add(new Meeting(address, tmpETP, tmpLTP));
         }
         distanceHelper = new DistanceHelper(meetings);
@@ -43,9 +43,6 @@ public class VNSOptimizerTest {
 
         Route opt2 = optimizer.opt2(Route.getInitialRoute(distanceHelper));
         opt2.getRoute();
-//        for (int j = 0; j < meetings.size(); j++) {
-//            System.out.print(meetings.get(opt2.getCitiesOrder()[j]));
-//        }
         System.out.println();
 
     }
@@ -54,10 +51,10 @@ public class VNSOptimizerTest {
     @Test
     public void testVNS() throws Exception {
         optimizer = new VNSOptimizer(distanceHelper);
-        optimizer.optimize();
-
-        VNSOptimizer.currentBest.getRoute();
-        VNSOptimizer.currentBest = null;
+        for (int i = 0; i < 100; i++) {
+            optimizer.optimize();
+            VNSOptimizer.currentBest = null;
+        }
 
     }
 
@@ -66,6 +63,6 @@ public class VNSOptimizerTest {
     public void testLocal1Shift() {
         Route x = Route.newRandomRoute(distanceHelper);
         x.getRoute();
-        optimizer.local1Shift(x).getRoute();
+        optimizer.local1Shift(x, true).getRoute();
     }
 }

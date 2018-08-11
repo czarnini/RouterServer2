@@ -23,45 +23,28 @@ class VNSOptimizer {
 
     void optimize() {
         try {
+            currentBest = Route.newRandomRoute(distanceHelper);
+            generateArcsToAvoid();
             long start = System.currentTimeMillis();
-            while (System.currentTimeMillis() - start < 10 * 1000) {
-                Route X = createFeasibleRoute();
+            while (System.currentTimeMillis() - start < 8 * 1000) {
+                Route X = Route.newRandomRoute(distanceHelper);
                 Route tmp = (GVNS(X));
                 if (tmp.getCost() < currentBest.getCost()) {
-                    System.out.println(String.format("Prev best %d \t curr best %d", currentBest.getCost(), tmp.getCost()));
                     currentBest = new Route(tmp);
                 }
             }
-            System.out.println("\n\n\n\n");
+            System.out.println(currentBest.getCost() + "\t" + currentBest.getInfeasiblityFactor() / 3600.0 + "\t" + currentBest.getDelayedClients());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
-    private Route createFeasibleRoute() {
-        Route x = opt2(Route.newRandomRoute(distanceHelper));
-        while (!x.isFeasible()) {
-            int level = 1;
-            while (!x.isFeasible() && level < 52) {
-                Route xPrim = opt2(x.generateNeighbourRoute(level));
-                if (xPrim.getCost() < x.getCost()) {
-                    x = new Route(xPrim);
-                    level = 1;
-                } else {
-                    level++;
-                }
-            }
-            x = opt2(Route.newRandomRoute(distanceHelper));
-        }
-        return x;
-    }
 
     private Route GVNS(Route x) {
         Route localMinimum = new Route(VND(x));
         Route xPrim;
         int level = 1;
-        while (level < 5) {
+        while (level < meetings.size()) {
             xPrim = VND(localMinimum.generateNeighbourRoute(level));
             if (xPrim.getCost() < localMinimum.getCost()) {
                 localMinimum = new Route(xPrim);
@@ -75,61 +58,78 @@ class VNSOptimizer {
 
 
     private Route VND(Route x) {
-        Route a, b;
+/*        Route a, b;
         Route localOptimum = new Route(x);
         do {
-            a = local1Shift(localOptimum);
+            a = local1Shift(localOptimum, true);
             b = opt2(a);
-        } while (!a.equals(b));
-        return b;
+        } while (!a.equals(b));*/
+
+        return opt2(x);
     }
 
-    Route local1Shift(Route x) {
+    Route local1Shift(Route x, boolean isContructionPhase) {
         int fromCity, toCity;
         Route localBest = new Route(x);
         Route xPrim = new Route(x);
-        for (int from = 1; from < meetings.size(); from++) {
-            for (int to = 1; to < meetings.size(); to++) {
-                fromCity = xPrim.getCity(from);
-                toCity = xPrim.getCity(to);
-                if (from == to) {
-                    continue;
-                }else if(fromCity < toCity){
-                    if(isFrobidedArc(fromCity, toCity)){
-                        continue;
-                    } if(isFrobidedArc(fromCity-1, fromCity+1)){
-                        continue;
-                    } if(toCity != meetings.size()-1 && isFrobidedArc(fromCity, toCity+1)){
-                        continue;
-                    }
-                }else {
-                    if(isFrobidedArc(fromCity, toCity)){
-                        continue;
-                    } if(isFrobidedArc(toCity-1, fromCity)){
-                        continue;
-                    } if(fromCity != meetings.size()-1 && isFrobidedArc(fromCity-1, fromCity+1)){
-                        continue;
+        if (isContructionPhase) {
+            ArrayList<Integer> foo = xPrim.getDelayedClients();
+            for (int from : foo) {
+                for (int to = 1; to < from; to++) {
+                    xPrim.swap(from, to);
+                    if (xPrim.getInfeasiblityFactor() < localBest.getInfeasiblityFactor()) {
+                        localBest = new Route(xPrim);
                     }
                 }
-                xPrim.swap(from, to);
-                if (xPrim.getCost() < localBest.getCost()) {
-                    localBest = new Route(xPrim);
+            }
+
+        } else {
+            for (int from = 1; from < meetings.size(); from++) {
+                for (int to = 1; to < meetings.size(); to++) {
+                    fromCity = xPrim.getCity(from);
+                    toCity = xPrim.getCity(to);
+                    if (from == to) {
+                        continue;
+                    } else if (fromCity < toCity) {
+                        if (isForbiddenArc(fromCity, toCity)) {
+                            continue;
+                        }
+                        if (isForbiddenArc(fromCity - 1, fromCity + 1)) {
+                            continue;
+                        }
+                        if (toCity != meetings.size() - 1 && isForbiddenArc(fromCity, toCity + 1)) {
+                            continue;
+                        }
+                    } else {
+                        if (isForbiddenArc(fromCity, toCity)) {
+                            continue;
+                        }
+                        if (isForbiddenArc(toCity - 1, fromCity)) {
+                            continue;
+                        }
+                        if (fromCity != meetings.size() - 1 && isForbiddenArc(fromCity - 1, fromCity + 1)) {
+                            continue;
+                        }
+                    }
+                    xPrim.swap(from, to);
+                    if (xPrim.getCost() < localBest.getCost()) {
+                        localBest = new Route(xPrim);
+                    }
                 }
             }
         }
         return localBest;
     }
 
-    private boolean isFrobidedArc(int from, int to) {
+    private boolean isForbiddenArc(int from, int to) {
         return arcsToAvoid.get(from).indexOf(to) != -1;
     }
 
 
-    private synchronized void initialize() {
+    private void initialize() {
         if (null == currentBest) {
             currentBest = Route.getInitialRoute(distanceHelper);
         }
-        generateArcsToAvoid();
     }
 
     private void generateArcsToAvoid() {
@@ -137,15 +137,20 @@ class VNSOptimizer {
         for (int from = 0, meetingsSize = meetings.size(); from < meetingsSize; from++) {
             arcsToAvoid.put(from, new ArrayList<>());
             for (int to = 0, meetingsSize1 = meetings.size(); to < meetingsSize1; to++) {
-                if (meetings.get(from).getEarliestTimePossible() + distanceHelper.getTime(from, to, (int) meetings.get(from).getEarliestTimePossible()) > meetings.get(to).getLatestTimePossible()) {
+                if (shouldAvoid(from, to)) {
                     arcsToAvoid.get(from).add(to);
                 }
             }
         }
     }
 
+    private boolean shouldAvoid(int from, int to) {
+        return meetings.get(from).getEarliestTimePossible() + distanceHelper.getTime(from, to, (int) meetings.get(from).getEarliestTimePossible() / 3600) > meetings.get(to).getLatestTimePossible();
+    }
 
-    Route opt2(Route opt2ResultLocal) {
+
+    Route opt2(Route opt2ResultLocal) //todo sprawdzanie zakazanych  łuków
+    {
         int distA;
         int distB;
         Calendar calendar = Calendar.getInstance();
@@ -153,16 +158,16 @@ class VNSOptimizer {
 
         for (int i = 0; i < meetings.size() - 2; i++) {
             for (int j = i + 2; j < meetings.size() - 1; j++) {
-                int IthCity = opt2ResultLocal.getCity(i);
+                int ithCity = opt2ResultLocal.getCity(i);
                 int IthPlusOneCity = opt2ResultLocal.getCity(i + 1);
                 int jThCity = opt2ResultLocal.getCity(j);
                 int jThPlusOneCity = opt2ResultLocal.getCity(j + 1);
 
-                int timeOfStartFromIth = 0;//opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(i) / 3600;
-                int timeOfStartFromJth = 0;//opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getCostAt(j) / 3600;
+                int timeOfStartFromIth = opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getTimeAt(i) / 3600;
+                int timeOfStartFromJth = opt2ResultLocal.getHourOfStart() + opt2ResultLocal.getTimeAt(j) / 3600;
 
-                distA = distanceHelper.getTime(IthCity, IthPlusOneCity, timeOfStartFromIth) + distanceHelper.getTime(jThCity, jThPlusOneCity, timeOfStartFromJth);
-                distB = distanceHelper.getTime(IthCity, jThCity, timeOfStartFromIth) + distanceHelper.getTime(IthPlusOneCity, jThPlusOneCity, timeOfStartFromJth);
+                distA = distanceHelper.getTime(ithCity, IthPlusOneCity, timeOfStartFromIth) + distanceHelper.getTime(jThCity, jThPlusOneCity, timeOfStartFromJth);
+                distB = distanceHelper.getTime(ithCity, jThCity, timeOfStartFromIth) + distanceHelper.getTime(IthPlusOneCity, jThPlusOneCity, timeOfStartFromJth);
 
                 if (distA > distB) {
                     opt2ResultLocal.swapForOpt2(i + 1, j);
@@ -180,9 +185,7 @@ class VNSOptimizer {
     public static Route recalculate(DistanceHelper distanceHelper) {
         System.out.println("Updating");
         Route route = Route.getInitialRoute(distanceHelper);
-        route.countCost();
         route.getRoute();
-
         return route;
 
     }
