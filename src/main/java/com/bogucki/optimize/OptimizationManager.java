@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -75,13 +76,15 @@ public class OptimizationManager implements Runnable  {
     }
 
     void publishOptimalRoute() {
+        Calendar calendar = Calendar.getInstance();
         long currentTime = System.currentTimeMillis();
         Map<String, Object> valuesToSend = new HashMap<>();
         int[] order = result.getCitiesOrder();
         for (int i = 0; i < order.length - 1; i++) {
             distanceHelper.getMeetings().get(order[i]).setMeetingOrder(i);
             distanceHelper.getMeetings().get(order[i]).setPlanedTimeOfVisit(currentTime);
-            currentTime += distanceHelper.getTime(order[i], order[i+1], (int) (currentTime /1000*3600)) *1000;
+            calendar.setTimeInMillis(currentTime);
+            currentTime += distanceHelper.getTime(order[i], order[i+1], calendar.get(Calendar.HOUR));
             valuesToSend.put(distanceHelper.getMeetings().get(order[i]).getPushId(), distanceHelper.getMeetings().get(order[i]).toMap());
         }
 
